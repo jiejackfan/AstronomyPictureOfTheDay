@@ -17,3 +17,6 @@ State the overall strategy of how you intend to solve the problem
 
 One of the main requirements is to work with data available from some public, free, Web API. Provide a brief description of the Web API you intend to use
 NASA’s APOD (Astronomy Picture of the Day) API allows developers to find interesting astronomical pictures by searching criteria like date, keyword, picture quality. The API will return JSON data where each image contains information such as copyright, date released, explanation, picture URL, and version. 
+
+Link to GDoc:
+https://docs.google.com/document/d/1pfkTym8qrTqGWqFt-1LnFg9YDkGHhGfaHiQWRun92Po/edit?usp=sharing
