@@ -1,29 +1,68 @@
-# wbdv-su20-fan-free-joshi
-Summer 1 2020 CS 4550
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-State the problem you are trying to solve.
-- If you are someone who is interested in astronomy, there isn’t a dedicated place to find and share astronomy-related pictures with friends. Also, it’s hard to manually browse old Astronomy Pictures of the Day on the NASA website. 
+## Available Scripts
 
-Include a description of at least two types of users that would use your Web application
+In the project directory, you can run:
 
--Astronomy enthusiasts
+### `npm start`
 
--Researchers 
+Runs the app in the development mode.<br />
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-For each of the types of users, provide two goals the user would like to achieve with your Web application:
+The page will reload if you make edits.<br />
+You will also see any lint errors in the console.
 
-1. Access pictures based on the date and share it with others by posting it on their “homepage”
-2. Learn more about what happened on a certain day based on the given description which can be used as an educational tool or simply used by astronomy enthusiasts. 
+### `npm test`
 
-State the overall strategy of how you intend to solve the problem
-- Our application will allow users to easily find/search for/share astronomical pictures. Shared pictures will go on a gallery page of the site, where people can just browse through shared images if they don’t want to find their own via the search feature. For researchers, each image will have a description with information about the picture. 
+Launches the test runner in the interactive watch mode.<br />
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-One of the main requirements is to work with data available from some public, free, Web API. Provide a brief description of the Web API you intend to use:
+### `npm run build`
 
-NASA’s APOD (Astronomy Picture of the Day) API allows developers to find interesting astronomical pictures by searching criteria like date, keyword, picture quality. The API will return JSON data where each image contains information such as copyright, date released, explanation, picture URL, and version. 
+Builds the app for production to the `build` folder.<br />
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-Google Docs Link:
+The build is minified and the filenames include the hashes.<br />
+Your app is ready to be deployed!
 
-Contains UML diagram for project assignment 2:
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-https://docs.google.com/document/d/1pfkTym8qrTqGWqFt-1LnFg9YDkGHhGfaHiQWRun92Po/edit?usp=sharing
+### `npm run eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+
+### Analyzing the Bundle Size
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+
+### Making a Progressive Web App
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+
+### Advanced Configuration
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+
+### Deployment
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+
+### `npm run build` fails to minify
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
