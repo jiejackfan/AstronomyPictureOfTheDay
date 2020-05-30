@@ -21,6 +21,7 @@ class SearchComponent extends React.Component {
         return(
             <div>
                 <form>
+                    <h5>Display Astronomy Picture of a Selected Date</h5>
                     <label>
                         Search by a single date: 
                         <input type="date"
@@ -35,6 +36,7 @@ class SearchComponent extends React.Component {
                     </button>
                 </form>
                 <form>
+                    <h5>Display Astronomy Picture of the Day for a Range of Dates</h5>
                     <label>
                         Start date:
                         <input type="date"

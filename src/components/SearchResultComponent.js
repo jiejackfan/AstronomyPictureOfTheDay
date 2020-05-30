@@ -22,17 +22,20 @@ export default class SearchResultComponent extends React.Component {
     render() {
         return(
             <div>
-                <table>
+                <table className='table'>
                     <thead>
-                        <th>Title</th>
-                        <th>Date</th>
-                        <th>image snapshot</th>
-                        <th>Details</th>
+                        <tr>
+                            <th>Title</th>
+                            <th>Date</th>
+                            <th>image snapshot</th>
+                            <th>Details</th>
+                        </tr>
                     </thead>
                     <tbody>
-                        <div>
-                            <SearchResultRowComponent/>
-                        </div>
+                            {this.state.apods.map(apod =>
+                                <SearchResultRowComponent
+                                    apod={apod} key={apod.date}/>
+                            )}
                     </tbody>
                 </table>
             </div>
