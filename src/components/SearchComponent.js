@@ -15,19 +15,20 @@ class SearchComponent extends React.Component {
         this.props.history.push(`/apods/${this.state.singleDate}`)
 
     submitDateRange = () =>
-        console.log(this.state.startDate + ' ' + this.state.endDate)
+        this.props.history.push(`/apods-date-range/${this.state.startDate}/${this.state.endDate}`)
 
     render() {
         return(
             <div>
                 <form>
+                    <h5>Display Astronomy Picture of a Selected Date</h5>
                     <label>
                         Search by a single date: 
-                        <input type="date" 
+                        <input type="date"
                                placeholder="10-21-2015"
                                name="singleDate"
                                value={this.state.singleDate}
-                               onChange={this.handleChange}></input>
+                               onChange={this.handleChange}/>
                     </label>
                     <button className="btn btn-danger"
                             onClick={this.submitSingleDate}>
@@ -35,13 +36,14 @@ class SearchComponent extends React.Component {
                     </button>
                 </form>
                 <form>
+                    <h5>Display Astronomy Picture of the Day for a Range of Dates</h5>
                     <label>
                         Start date:
                         <input type="date"
                                placeholder="01-01-2020"
                                name="startDate"
                                value={this.state.startDate}
-                               onChange={this.handleChange}></input>
+                               onChange={this.handleChange}/>
                     </label>
                     <label>
                         End date:
@@ -49,7 +51,7 @@ class SearchComponent extends React.Component {
                                placeholder="02-01-2020"
                                name="endDate"
                                value={this.state.endDate}
-                               onChange={this.handleChange}></input>
+                               onChange={this.handleChange}/>
                     </label>
                     <button className="btn btn-danger"
                             onClick={this.submitDateRange}>

@@ -18,7 +18,7 @@ class DetailsComponent extends React.Component {
     render() {
         return(
             <div>
-                <img src={this.state.apod.url}/>
+                <img src={this.state.apod.url} alt="picture" height='500px'/>
                 <h1>{this.state.apod.title}</h1>
                 <h2>{this.state.apod.date}</h2>
                 <p>{this.state.apod.explanation}</p>
