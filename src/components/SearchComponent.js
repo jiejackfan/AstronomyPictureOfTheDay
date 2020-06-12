@@ -1,4 +1,6 @@
 import React from 'react';
+import NavBarComponent from "./NavBarComponent";
+import "./styles/SearchComponent.css"
 
 class SearchComponent extends React.Component {
 
@@ -20,6 +22,7 @@ class SearchComponent extends React.Component {
     render() {
         return(
             <div>
+                <NavBarComponent/>
                 <form>
                     <h5>Display Astronomy Picture of a Selected Date</h5>
                     <label>
