@@ -8,7 +8,6 @@ const findApodByStartEndDate = (startDate, endDate) =>
     fetch(url + '&start_date=' + startDate + '&end_date=' + endDate)
         .then(response => response.json())
 
-
 export default {
     findApodByDate,
     findApodByStartEndDate
