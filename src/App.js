@@ -4,6 +4,8 @@ import SearchComponent from './components/SearchComponent'
 import DetailsComponent from './components/DetailsComponent'
 import RegisterComponent from './components/RegisterComponent'
 import LoginComponent from './components/LoginComponent'
+import ProfileComponent from './components/ProfileComponent'
+import AboutComponent from './components/AboutComponent'
 import './App.css'
 import SearchResultComponent from "./components/SearchResultComponent";
 
@@ -32,6 +34,12 @@ function App() {
         <Route path='/login'
                component={LoginComponent}>
         </Route>
+           <Route path='/profile'
+                       component={ProfileComponent}>
+                </Route>
+                 <Route path='/about'
+                                       component={AboutComponent}>
+                                </Route>
       </BrowserRouter>
     </div>  
   );
