@@ -1,6 +1,8 @@
 import React from 'react';
 import {register} from "../services/UserService";
 import {Link} from "react-router-dom";
+import Background from './pick.jpg';
+
 export default class Register extends React.Component {
     state = {
         username: '',
@@ -33,7 +35,9 @@ export default class Register extends React.Component {
                 render() {
                     return(
                     <form>
-                    <h3> Register </h3>
+                      <font color={'white'}>
+                    <h3  style={{backgroundImage: `url(${Background})`}}>Register </h3>
+                      </font>
                      {
                               this.state.error &&
                               <div className="alert alert-ndanger">

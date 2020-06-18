@@ -29,19 +29,19 @@ class SearchComponent extends React.Component {
         return(
   <>
 
-            <div className="Container content-center">
+            <div className="Container-fluid" style={{backgroundColor: 'white'}} >
                 <NavBarComponent/>
 
-                <h3 style={{paddingBottom: 20}}> Display Astronomy Picture
+                <h3 className="d-flex justify-content-center" style={{paddingBottom: 20}}> Display Astronomy Picture
 
                 </h3>
 
-                <Form>
-                     <FormGroup  className="mb-2 mr-sm-2 mb-sm-0 " style={{paddingBottom: 20}}>
-                       <Label for="exampleEmail"  className="mr-sm-2">Selected Date :&nbsp;&nbsp;
+                <Form className="d-flex justify-content-center">
+                     <FormGroup className="mb-2 mr-sm-2 mb-sm-0 " style={{paddingBottom: 20}}>
+                       <Label for="exampleEmail"  className="mr-sm-2 ">Selected Date :&nbsp;&nbsp;
 
 
-                       <Input type="date"  placeholder="10-21-2015"  name="singleDate"
+                       <Input type="date" bsSize="lg" placeholder="10-21-2015"  name="singleDate"
                                             value={this.state.singleDate}
                                         onChange={this.handleChange}/>
                                         </Label>
@@ -62,13 +62,14 @@ class SearchComponent extends React.Component {
                        <Label for="exampleEmail"  className="mr-sm-2">Date Range :&nbsp;&nbsp;
 
 
-                       <Input type="date"  placeholder="01-01-2020"  name="startDate"
+                       <Input type="date" bsSize="lg" placeholder="01-01-2020"  name="startDate"
                                             value={this.state.startDate}
                                         onChange={this.handleChange}/>
                                         </Label>
-                                   <Label for="exampleEmail"  className="mr-sm-2"> to&nbsp;&nbsp;
+                                           to&nbsp;&nbsp;
+                                   <Label for="exampleEmail"  className="mr-sm-2">
 
-                               <Input type="date"  placeholder="02-01-2020"  name="endDate"
+                               <Input type="date" bsSize="lg" placeholder="02-01-2020"  name="endDate"
                                          value={this.state.endDate}
                                   onChange={this.handleChange}/>
                                                                          </Label>

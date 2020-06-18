@@ -1,9 +1,10 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import { useState } from 'react';
-import Background from './pic.jpg';
-
+import Background from './pick.jpg';
+import { IconName } from "react-icons/fa";
 import {
+Button,
   Collapse,
   Navbar,
   NavbarToggler,
@@ -24,12 +25,12 @@ const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
   return (
-    <div>
+    <div class="container-fluid" >
 
 
 
-  <div class="container" style={{paddingBottom: 50}} >
-        <div className="navbar navbar-expand-lg navbar-light  bg-light"
+  <div  style={{paddingBottom: 50}} >
+        <div className="navbar navbar-expand-lg navbar-dark  bg-dark"
 
         style={{backgroundImage: `url(${Background})`}}>
 
@@ -59,17 +60,34 @@ const [isOpen, setIsOpen] = useState(false);
                  </font>
                </Link>
                  </li>
-                 <Link to={`/register`}>
+
 
                <li class="nav-pills pull-right" style={{paddingLeft: 50}}>
+               <Link to={`/register`}>
                <font color={'white'}>
                 Register
                   </font>
+                  </Link>
+
                </li>
- </Link>
 
 
              </ul>
+              <span
+                             className="btn-icon btn-info btn-round"
+
+
+                           >
+                             <i className="btn fa fa-facebook-square btn-info"></i>
+                           </span>
+                           &nbsp;&nbsp;
+                           <span
+                             className="btn-icon btn-round btn-info"
+
+
+                           >
+                             <i className="btn fa fa-twitter btn-info"></i>
+                           </span>
                     </Collapse>
 
        </div>

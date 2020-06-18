@@ -11,7 +11,7 @@ import SearchResultComponent from "./components/SearchResultComponent";
 
 function App() {
   return (
-    <div className="app container">
+    <div className="app container-fluid">
       <BrowserRouter>
 
         <Route path='/'

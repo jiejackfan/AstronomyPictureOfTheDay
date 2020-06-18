@@ -1,6 +1,7 @@
 import React from 'react';
 import {login} from "../services/UserService";
 import {Link} from "react-router-dom";
+import Background from './pick.jpg';
 
 export default class Login extends React.Component {
 
@@ -32,10 +33,11 @@ export default class Login extends React.Component {
 render() {
         return (
 <form>
-
-<h3> Login </h3>
+ <font color={'white'}>
+<h3 style={{backgroundImage: `url(${Background})`}}> Login </h3>
+ </font>
  <div className="form-group">
-        <label>Username</label>
+        <label >Username</label>
         <input    placeholder="Enter User Name"
                   onChange={(e) => this.setState({username: e.target.value})}
                   className="form-control"/>
