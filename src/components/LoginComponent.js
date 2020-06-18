@@ -9,9 +9,26 @@ export default class Login extends React.Component {
         password: ''
     }
 
-    login = (user) =>
-        login(user)
-            .then(currentUser => this.props.history.push('/profile'))
+  login = () => {
+     fetch("http://localhost:8080/api/login", {
+       body: JSON.stringify({
+         username: this.state.username,
+         password: this.state.password}),
+       headers: {
+         'content-type': 'application/json'
+       },
+       method: 'POST',
+       credentials: "include"
+     }).then(response => response.json())
+       .catch(e => {
+         this.props.history.push("/login")
+       })
+       .then(currentUser => {
+         if(currentUser)
+           this.props.history.push("/profile")
+       })
+
+   }
 render() {
         return (
 <form>

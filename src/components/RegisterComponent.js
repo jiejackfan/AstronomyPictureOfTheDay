@@ -7,15 +7,39 @@ export default class Register extends React.Component {
         password: '',
         verifyPassword: ''
     }
- register = (user) =>
-         register(user)
-             .then(newUser => this.props.history.push('/profile'))
-
-
+ register = () => {
+     fetch("http://localhost:8080/api/register", {
+       body: JSON.stringify({
+         username: this.state.username,
+         password: this.state.password
+       }),
+       headers: {
+         'content-type': 'application/json'
+       },
+       method: 'POST',
+       credentials: "include"
+     }).then(response => response.json())
+       .catch(e => {
+         this.setState({
+           error: 'Unable to register'
+         })
+       })
+       .then(currentUser => {
+         if(currentUser) {
+           this.props.history.push("/profile")
+         }
+       })
+   }
                 render() {
                     return(
                     <form>
                     <h3> Register </h3>
+                     {
+                              this.state.error &&
+                              <div className="alert alert-ndanger">
+                                {this.state.error}
+                              </div>
+                            }
                        <div className="form-group">
                               <label>User Name</label>
 
@@ -36,23 +60,15 @@ export default class Register extends React.Component {
                                                 type="password"
                                       placeholder="Enter password"/>
                                               </div>
- <div className="form-group">
-                           <label>Verfiy Password</label>
-                            <input
-                                               value={this.state.verifyPassword}
-                                               onChange={(e) => this.setState({
-                                                   password: e.target.value
-                                               })}
-                                               className="form-control"
-                                               type="password"
-                                               placeholder="Enter password"/>
-        </div>
 
 
-  <button type="submit" className="btn btn-primary btn-block"
+<Link to="/profile">
+  <button type="submit" className="btn btn-success btn-block"
                   onClick={() => this.register(this.state)}
                      >
-                  Register </button>
+                    Register
+            </button>
+                   </Link>
                  <p className="forgot-password text-right">
                              <Link to="/login">Sign in?</Link>
                  </p>
