@@ -34,9 +34,16 @@ export default class Register extends React.Component {
    }
                 render() {
                     return(
+                         <div className=" container ">
                     <form>
                       <font color={'white'}>
-                    <h3  style={{backgroundImage: `url(${Background})`}}>Register </h3>
+                    <h3  style={{backgroundImage: `url(${Background})`}}>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    &nbsp;&nbsp;Register
+                     <Link to="/home">
+                     <i class="fa fa-home float-right btn-sm" aria-hidden="true"></i>
+                     </Link>
+                     </h3>
                       </font>
                      {
                               this.state.error &&
@@ -77,6 +84,7 @@ export default class Register extends React.Component {
                              <Link to="/login">Sign in?</Link>
                  </p>
 </form>
+</div>
                       );
                       }
                       }

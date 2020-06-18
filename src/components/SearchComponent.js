@@ -31,12 +31,12 @@ class SearchComponent extends React.Component {
     render() {
         return(
   <>
-<body style={{minHeight: '100%'}}>
+<body style={{minHeight: '100%'},{backgroundColor: "#F0FFFF"}}>
 
             <header>
                 <NavBarComponent/>
 </header>
-   <div className="Container-fluid " style={{backgroundColor: 'white'},{paddingBottom: 400}}>
+   <div className="Container-fluid " style={{backgroundColor: "#F0FFFF"},{paddingBottom: 400}}>
                 <h3 className="d-flex justify-content-center inline" style={{paddingBottom: 20}}>
 
                 </h3>

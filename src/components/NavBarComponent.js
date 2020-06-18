@@ -37,6 +37,7 @@ const [isOpen, setIsOpen] = useState(false);
  <NavbarBrand className="mb-0 h1"href="/" >
   <font color={'white'}>
  <h1>
+ <i class="fa fa-star" aria-hidden="true"></i>
  &nbsp;&nbsp;&nbsp;&nbsp;STAR MAP
 </h1>
         </font>

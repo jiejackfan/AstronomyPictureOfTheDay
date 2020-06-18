@@ -40,6 +40,9 @@ function App() {
                  <Route path='/about'
                                        component={AboutComponent}>
                                 </Route>
+                                <Route path='/home'
+                                                                       component={SearchComponent}>
+                                                                </Route>
       </BrowserRouter>
     </div>  
   );
