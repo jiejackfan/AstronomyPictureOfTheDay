@@ -1,6 +1,7 @@
 import React from 'react';
 import {login} from "../services/UserService";
 import {Link} from "react-router-dom";
+import Background from './pick.jpg';
 
 export default class Login extends React.Component {
 
@@ -31,11 +32,21 @@ export default class Login extends React.Component {
    }
 render() {
         return (
-<form>
+        <div className=" container ">
+<form >
+ <font color={'white'}>
+<h3 style={{backgroundImage: `url(${Background})`}}>
+<i class="fa fa-star" aria-hidden="true"></i>
+&nbsp;&nbsp;Login
+<Link to="/home">
+       <i class="fa fa-home float-right btn-sm" aria-hidden="true"></i>
+       </Link>
+&nbsp;&nbsp;&nbsp;&nbsp;
+</h3>
 
-<h3> Login </h3>
- <div className="form-group">
-        <label>Username</label>
+ </font>
+ <div style={{paddingTop: 15}} className="form-group">
+        <label >Username</label>
         <input    placeholder="Enter User Name"
                   onChange={(e) => this.setState({username: e.target.value})}
                   className="form-control"/>
@@ -56,14 +67,15 @@ render() {
                     </div>
                 </div>
 
-                <button type="submit" className="btn btn-primary btn-block"
+                <button type="submit" className="btn btn-danger btn-block"
                              onClick={() => this.login(this.state)}>
-                             <Link to="/profile">Sign up</Link>
+
                  Sign in</button>
                 <p className="forgot-password text-right">
                       <Link to="/register">Sign up</Link>
                 </p>
             </form>
+            </div>
 );
 }
 }

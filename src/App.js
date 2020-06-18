@@ -13,7 +13,7 @@ import ProfileComponent from "./components/ProfileComponent";
 
 function App() {
   return (
-    <div className="app container">
+    <div className="app container-fluid">
       <BrowserRouter>
 
         <Route path='/'
@@ -55,6 +55,9 @@ function App() {
                  <Route path='/about'
                                        component={AboutComponent}>
                                 </Route>
+                                <Route path='/home'
+                                                                       component={SearchComponent}>
+                                                                </Route>
       </BrowserRouter>
     </div>  
   );

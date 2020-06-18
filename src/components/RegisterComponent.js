@@ -1,6 +1,8 @@
 import React from 'react';
 import {register} from "../services/UserService";
 import {Link} from "react-router-dom";
+import Background from './pick.jpg';
+
 export default class Register extends React.Component {
     state = {
         username: '',
@@ -34,8 +36,17 @@ export default class Register extends React.Component {
    }
                 render() {
                     return(
+                         <div className=" container ">
                     <form>
-                    <h3> Register </h3>
+                      <font color={'white'}>
+                    <h3  style={{backgroundImage: `url(${Background})`}}>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    &nbsp;&nbsp;Register
+                     <Link to="/home">
+                     <i class="fa fa-home float-right btn-sm" aria-hidden="true"></i>
+                     </Link>
+                     </h3>
+                      </font>
                      {
                               this.state.error &&
                               <div className="alert alert-ndanger">
@@ -79,6 +90,7 @@ export default class Register extends React.Component {
                              <Link to="/login">Sign in?</Link>
                  </p>
 </form>
+</div>
                       );
                       }
                       }

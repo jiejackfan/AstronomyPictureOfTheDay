@@ -1,34 +1,104 @@
 import React from "react";
 import {Link} from "react-router-dom";
+import { useState } from 'react';
+import Background from './pick.jpg';
+import { IconName } from "react-icons/fa";
+import {
+Button,
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+  NavbarText
+} from 'reactstrap';
+import { Jumbotron, Container } from 'reactstrap';
 
-const NavBarComponent = () =>
-    <div>
-     <div className="banner ">
-      <h1 className="logo-font float-center" >
-               Star Map
-             </h1>
-  <p>See the stars</p>
-        <nav className="navbar navbar-expand-lg navbar-dark  bg-dark">
+const NavBarComponent = () =>{
+const [isOpen, setIsOpen] = useState(false);
+
+  const toggle = () => setIsOpen(!isOpen);
+  return (
+    <div class="container-fluid" >
+
+
+
+  <div  style={{paddingBottom: 50}} >
+        <div className="navbar navbar-expand-lg navbar-dark  bg-dark"
+
+        style={{backgroundImage: `url(${Background})`}}>
+
+ <NavbarBrand className="mb-0 h1"href="/" >
+  <font color={'white'}>
+ <h1>
+ <i class="fa fa-star" aria-hidden="true"></i>
+ &nbsp;&nbsp;&nbsp;&nbsp;STAR MAP
+</h1>
+        </font>
+</NavbarBrand>
+
+        <NavbarToggler onClick={toggle} />
+        <Collapse isOpen={isOpen} navbar>
+
+  <ul class="navbar-nav mr-auto">
+  <li class="nav-item" style={{paddingLeft: 50}}>
          <Link to={`/about`}>
-         <a class="navbar-brand" href="#">About</a>
+           <font color={'white'}>
+         About
+              </font>
 </Link>
-          <ul class="navbar-nav mr-auto">
-
-               <li class="nav-item active">
+</li>
+               <li class="nav-pills pull-right " style={{paddingLeft: 50}}>
                 <Link to={`/login`}>
-                 <a class="nav-link">Login <span class="sr-only">(current)</span></a>
+                     <font color={'white'}>
+                 Login
+                 </font>
                </Link>
                  </li>
-                 <Link to={`/register`}>
 
-               <li class="nav-item">
-                 <a class="nav-link">Register</a>
+
+               <li class="nav-pills pull-right" style={{paddingLeft: 50}}>
+               <Link to={`/register`}>
+               <font color={'white'}>
+                Register
+                  </font>
+                  </Link>
+
                </li>
- </Link>
 
 
              </ul>
-        </nav>
+              <span
+                             className="btn-icon btn-info btn-round"
+
+
+                           >
+                             <i className="btn fa fa-facebook-square btn-danger"></i>
+                           </span>
+                           &nbsp;&nbsp;
+                           <span
+                             className="btn-icon btn-round "
+
+
+                           >
+                             <i className="btn fa fa-twitter btn-danger"></i>
+                           </span>
+                    </Collapse>
+
+       </div>
+
+
+        </div>
+
+
     </div>
-   </div>
+)
+
+}
 export default NavBarComponent
