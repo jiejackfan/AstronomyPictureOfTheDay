@@ -6,6 +6,8 @@ import RegisterComponent from './components/RegisterComponent'
 import LoginComponent from './components/LoginComponent'
 import './App.css'
 import SearchResultComponent from "./components/SearchResultComponent";
+import HomeComponent from "./components/HomeComponent";
+import ProfileComponent from "./components/ProfileComponent";
 
 function App() {
   return (
@@ -13,6 +15,10 @@ function App() {
       <BrowserRouter>
 
         <Route path='/'
+               exact={true}
+               component={HomeComponent}>
+        </Route>
+        <Route path='/search'
                exact={true}
                component={SearchComponent}>
         </Route>
@@ -28,6 +34,15 @@ function App() {
         <Route path='/register'
                component={RegisterComponent}>
         </Route>
+
+        <Route path='/profile'
+               component={ProfileComponent}>
+        </Route>
+
+        <Route path='/profile/:uid'
+                component={ProfileComponent}>
+        </Route>
+
 
         <Route path='/login'
                component={LoginComponent}>
