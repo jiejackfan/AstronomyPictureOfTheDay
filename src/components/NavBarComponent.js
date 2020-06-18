@@ -1,34 +1,64 @@
 import React from "react";
 import {Link} from "react-router-dom";
+import { useState } from 'react';
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+  NavbarText
+} from 'reactstrap';
 
-const NavBarComponent = () =>
+const NavBarComponent = () =>{
+const [isOpen, setIsOpen] = useState(false);
+
+  const toggle = () => setIsOpen(!isOpen);
+  return (
     <div>
-     <div className="banner ">
-      <h1 className="logo-font float-center" >
-               Star Map
-             </h1>
-  <p>See the stars</p>
-        <nav className="navbar navbar-expand-lg navbar-dark  bg-dark">
-         <Link to={`/about`}>
-         <a class="navbar-brand" href="#">About</a>
-</Link>
-          <ul class="navbar-nav mr-auto">
 
-               <li class="nav-item active">
+
+  <div class="container-fluid" style={{paddingBottom: 50}} >
+        <div className="navbar navbar-expand-lg navbar-light  bg-light">
+ <NavbarBrand href="/">STAR MAP</NavbarBrand>
+        <NavbarToggler onClick={toggle} />
+        <Collapse isOpen={isOpen} navbar>
+
+  <ul class="navbar-nav mr-auto">
+  <li class="nav-item">
+         <Link to={`/about`}>
+         <a class="nav-link" href="#">About</a>
+</Link>
+</li>
+               <li class="nav-pills pull-right ">
                 <Link to={`/login`}>
                  <a class="nav-link">Login <span class="sr-only">(current)</span></a>
                </Link>
                  </li>
                  <Link to={`/register`}>
 
-               <li class="nav-item">
+               <li class="nav-pills pull-right">
                  <a class="nav-link">Register</a>
                </li>
  </Link>
 
 
              </ul>
-        </nav>
+                    </Collapse>
+
+       </div>
+
+
+        </div>
+
     </div>
-   </div>
+)
+
+}
 export default NavBarComponent
