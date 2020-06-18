@@ -78,15 +78,15 @@ const [isOpen, setIsOpen] = useState(false);
 
 
                            >
-                             <i className="btn fa fa-facebook-square btn-info"></i>
+                             <i className="btn fa fa-facebook-square btn-danger"></i>
                            </span>
                            &nbsp;&nbsp;
                            <span
-                             className="btn-icon btn-round btn-info"
+                             className="btn-icon btn-round "
 
 
                            >
-                             <i className="btn fa fa-twitter btn-info"></i>
+                             <i className="btn fa fa-twitter btn-danger"></i>
                            </span>
                     </Collapse>
 
