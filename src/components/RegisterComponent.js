@@ -5,11 +5,13 @@ export default class Register extends React.Component {
     state = {
         username: '',
         password: '',
-        verifyPassword: ''
+        email: ''
     }
+
  register = () => {
-     fetch("http://localhost:8080/api/register", {
+     fetch("https://fan-free-joshi-server.herokuapp.com/api/register", {
        body: JSON.stringify({
+         email: this.state.email,
          username: this.state.username,
          password: this.state.password
        }),
@@ -41,16 +43,20 @@ export default class Register extends React.Component {
                               </div>
                             }
                        <div className="form-group">
+                              <label>Email</label>
+                              <input value={this.state.email}
+                                         onChange={(e) => this.setState({
+                                          email: e.target.value
+                                                  })}
+                                                  className="form-control"
+                                                  placeholder="email@nasa.com"/>
                               <label>User Name</label>
-
                               <input value={this.state.username}
                                          onChange={(e) => this.setState({
                                           username: e.target.value
                                                   })}
                                                   className="form-control"
-                                                  placeholder="username"/>
-                                    </div>
-                             <div className="form-group">
+                                                  placeholder="astrologyfan101"/>
                                       <label>Password</label>
                                       <input  value={this.state.password}
                                          onChange={(e) => this.setState({
@@ -58,7 +64,7 @@ export default class Register extends React.Component {
                                                      })}
                                                 className="form-control"
                                                 type="password"
-                                      placeholder="Enter password"/>
+                                      placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;"/>
                                               </div>
 
 
