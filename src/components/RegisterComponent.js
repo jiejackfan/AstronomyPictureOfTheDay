@@ -48,6 +48,7 @@ export default class Register extends React.Component {
                                                placeholder="Enter password"/>
         </div>
 
+
   <button type="submit" className="btn btn-primary btn-block"
                   onClick={() => this.register(this.state)}
                      >

@@ -41,6 +41,7 @@ render() {
 
                 <button type="submit" className="btn btn-primary btn-block"
                              onClick={() => this.login(this.state)}>
+                             <Link to="/profile">Sign up</Link>
                  Sign in</button>
                 <p className="forgot-password text-right">
                       <Link to="/register">Sign up</Link>
