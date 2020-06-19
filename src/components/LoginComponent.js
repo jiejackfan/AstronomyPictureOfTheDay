@@ -2,6 +2,7 @@ import React from 'react';
 import {login} from "../services/UserService";
 import {Link} from "react-router-dom";
 import Background from './pick.jpg';
+
 import  "./Footer.css";
 export default class Login extends React.Component {
 
@@ -44,28 +45,30 @@ render() {
 &nbsp;&nbsp;&nbsp;&nbsp;
 </h3>
 
- </font>
- <div style={{paddingTop: 15}} className="form-group">
-        <label >Username</label>
-        <input    placeholder="Enter User Name"
-                  onChange={(e) => this.setState({username: e.target.value})}
-                  className="form-control"/>
 
-                </div>
- <div className="form-group">
-                    <label>Password</label>
-                    <input   type="password"
-                    placeholder="Enter password"
-                              onChange={(e) => this.setState({password: e.target.value})}
-                              className="form-control"/>
-                </div>
+                    </font>
+                    <div style={{paddingTop: 15}} className="form-group">
+                        <label>Username</label>
+                        <input placeholder="Enter User Name"
+                               onChange={(e) => this.setState({username: e.target.value})}
+                               className="form-control"/>
 
-                <div className="form-group">
-                    <div className="custom-control custom-checkbox">
-                        <input type="checkbox" className="custom-control-input" id="customCheck1" />
-                        <label className="custom-control-label" htmlFor="customCheck1">Remember me</label>
                     </div>
-                </div>
+                    <div className="form-group">
+                        <label>Password</label>
+                        <input type="password"
+                               placeholder="Enter password"
+                               onChange={(e) => this.setState({password: e.target.value})}
+                               className="form-control"/>
+                    </div>
+
+                    <div className="form-group">
+                        <div className="custom-control custom-checkbox">
+                            <input type="checkbox" className="custom-control-input" id="customCheck1"/>
+                            <label className="custom-control-label" htmlFor="customCheck1">Remember me</label>
+                        </div>
+                    </div>
+
 
                 <button type="submit" className="btn btn-danger btn-block"
                              onClick={() => this.login}>
@@ -137,7 +140,9 @@ render() {
                                                  </div>
 
                                        </footer>
+    
+
             </div>
-);
-}
+        );
+    }
 }

@@ -17,6 +17,7 @@ Jumbotron,
   ReactCenter,
 } from "reactstrap";
 export default class Register extends React.Component {
+
      state = {
             username: '',
             password: '',
@@ -93,6 +94,7 @@ export default class Register extends React.Component {
                                       placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;"/>
                                               </div>
 
+
 <div className="form-check">
     <input type="checkbox"
  id="exampleCheck1"/>
@@ -100,6 +102,7 @@ export default class Register extends React.Component {
     <label className="form-check-label" for="exampleCheck1">Agree to Privacy Policy</label>
        </Link>
   </div>
+
 
 <Link to="/profile">
   <button type="submit" className="btn btn-success btn-block"
@@ -181,3 +184,5 @@ export default class Register extends React.Component {
                       );
                       }
                       }
+
+                   

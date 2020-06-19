@@ -32,7 +32,7 @@ class SearchComponent extends React.Component {
     render() {
         return(
   <>
-<body style={{minHeight: '100%'},{backgroundColor: "#F0FFFF"}}>
+<body style={{minHeight: '100%'}, {backgroundColor: "#F0FFFF"}}>
 
             <header>
                 <NavBarComponent/>
