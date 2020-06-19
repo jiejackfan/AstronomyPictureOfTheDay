@@ -72,6 +72,14 @@ const [isOpen, setIsOpen] = useState(false);
 
                </li>
 
+  <li class="nav-pills pull-right" style={{paddingLeft: 50}}>
+               <Link to={`/posts`}>
+               <font color={'white'}>
+                Posts
+                  </font>
+                  </Link>
+
+               </li>
 
              </ul>
               <span

@@ -6,6 +6,7 @@ import RegisterComponent from './components/RegisterComponent'
 import LoginComponent from './components/LoginComponent'
 import ProfileComponent from './components/ProfileComponent'
 import AboutComponent from './components/AboutComponent'
+import PostsComponent from './components/PostsComponent'
 import './App.css'
 import SearchResultComponent from "./components/SearchResultComponent";
 
@@ -43,6 +44,11 @@ function App() {
                                 <Route path='/home'
                                                                        component={SearchComponent}>
                                                                 </Route>
+
+
+                   <Route path='/posts'
+                         component={PostsComponent}>
+                                                                                 </Route>
       </BrowserRouter>
     </div>  
   );
