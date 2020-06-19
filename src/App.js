@@ -11,11 +11,10 @@ import HomeComponent from './components/HomeComponent'
 import './App.css'
 import SearchResultComponent from "./components/SearchResultComponent";
 
-
 function App() {
-  return (
-    <div className="app container-fluid">
-      <BrowserRouter>
+    return (
+        <div className="app container-fluid">
+            <BrowserRouter>
 
         <Route path='/'
                exact={true}
@@ -23,25 +22,28 @@ function App() {
         </Route>
         
 
-        <Route path='/apods/:date'
-               component={DetailsComponent}>
-        </Route>
 
-        <Route path='/apods-date-range/:startDate/:endDate/'
-               component={SearchResultComponent}>
-        </Route>
+                <Route path='/apods/:date'
+                       component={DetailsComponent}>
+                </Route>
 
-        <Route path='/register'
-               component={RegisterComponent}>
-        </Route>
+                <Route path='/apods-date-range/:startDate/:endDate/'
+                       component={SearchResultComponent}>
+                </Route>
 
-        <Route path='/profile'
-               component={ProfileComponent}>
-        </Route>
+                <Route path='/register'
+                       component={RegisterComponent}>
+                </Route>
 
-        <Route path='/profile/:uid'
+                <Route path='/profile'
+                       exact={true}
+                       component={ProfileComponent}>
+                </Route>
+
+                <Route path='/profile/:uid'
+               exact={true}
                 component={ProfileComponent}>
-        </Route>
+                </Route>
 
 
         <Route path='/login'
