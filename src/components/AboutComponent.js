@@ -1,5 +1,7 @@
 import React from 'react';
 import {Link} from "react-router-dom";
+import  "./Footer.css";
+
 import {
 Jumbotron,
   Button,
@@ -34,7 +36,7 @@ return (
 
 
   <footer style={{backgroundImage: `url(${Background})`}
-} className='footer mt-auto py-3 bg-dark text-white'>
+} className='footer mt-auto py-3 bg-dark text-white footercss'>
 
                              <div class="container">
                                        <div class="row row-30">
