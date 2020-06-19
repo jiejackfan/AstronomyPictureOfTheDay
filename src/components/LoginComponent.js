@@ -2,7 +2,7 @@ import React from 'react';
 import {login} from "../services/UserService";
 import {Link} from "react-router-dom";
 import Background from './pick.jpg';
-
+import  "./Footer.css";
 export default class Login extends React.Component {
 
  state = {
@@ -32,8 +32,8 @@ export default class Login extends React.Component {
    }
 render() {
         return (
-        <div className=" container ">
-<form >
+        <div className="container" >
+<form style={{backgroundColor: "#F0FFFF"},{paddingBottom: 300}} >
  <font color={'white'}>
 <h3 style={{backgroundImage: `url(${Background})`}}>
 <i class="fa fa-star" aria-hidden="true"></i>
@@ -75,6 +75,68 @@ render() {
                       <Link to="/register">Sign up</Link>
                 </p>
             </form>
+              <footer style={{backgroundImage: `url(${Background})`}
+            } className='footer mt-auto py-3 bg-dark text-white footercss'>
+
+                                         <div class="container">
+                                                   <div class="row row-30">
+                                                     <div class="col-md-4 col-xl-5">
+                                                       <div class="pr-xl-4"><a class="brand" >
+                                                       </a>
+                                                         <p>We are an online platform that encourages astronomical adventures from your own screen .</p>
+
+                                                         <p class="rights"><span>©  </span><span class="copyright-year">2020</span><span> </span><span>Fan-Free-Joshi</span><span>. </span><span>All Rights Reserved.</span></p>
+                                                       </div>
+                                                     </div>
+                                                     <div class="col-md-4">
+                                                       <h5>Contacts</h5>
+                                                       <dl class="contact-list">
+                                                         <dt>Address:</dt>
+                                                         <dd>780 Columbus  Avenue, Boston, MA </dd>
+                                                       </dl>
+                                                       <dl class="contact-list">
+                                                         <dt>email:</dt>
+                                                         <dd> starmaps@gmail.com </dd>
+                                                       </dl>
+                                                       <dl class="contact-list">
+
+                                                       </dl>
+                                                     </div>
+                                                     <div class="col-md-4 col-xl-3">
+                                                      <h5>Links</h5>
+                                                     <dl class="link-list">
+
+                                                      <dt>
+
+                                                        <Link to="/privacy">
+                                                              <font color={'white'}>
+                                                            Privacy Policy
+                                                                         </font>
+                                                              </Link>
+
+                                                               </dt>
+
+                                                               </dl>
+                                                                           <ul class="nav-list">
+                                                        <span className="btn-icon btn-info btn-round"
+                                                        >
+                                                                                    <i className="btn fa fa-facebook-square btn-danger"></i>
+                                                                                  </span>
+                                                                                  &nbsp;&nbsp;
+                                                                                  <span
+                                                                                    className="btn-icon btn-round "
+
+
+                                                                                  >
+                                                                                    <i className="btn fa fa-twitter btn-danger"></i>
+                                                                                  </span>
+
+                                                       </ul>
+                                                     </div>
+                                                   </div>
+                                                 </div>
+
+                                       </footer>
             </div>
 );
 }

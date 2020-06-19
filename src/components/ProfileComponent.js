@@ -1,6 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import Background from './pick.jpg';
+import  "./Footer.css";
 export default class ProfileComponent extends React.Component {
     render() {
         return(

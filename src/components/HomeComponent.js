@@ -1,5 +1,5 @@
 import React from "react"
-
+import  "./Footer.css";
 import Center from 'react-center';
 import {Link} from "react-router-dom";
 import './Home.css'
@@ -33,10 +33,10 @@ export default class HomeComponent extends React.Component {
                 <Link to={`/search`}>
 
                 <i className=" fa fa-rocket btn-lg fa-2x" aria-hidden="true"  style={{color:"white"}}
-
                 >
                 </i>
                  </Link>
+
  </div>
  </div>
 

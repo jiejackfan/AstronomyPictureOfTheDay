@@ -8,6 +8,7 @@ import ProfileComponent from './components/ProfileComponent'
 import AboutComponent from './components/AboutComponent'
 import PostsComponent from './components/PostsComponent'
 import HomeComponent from './components/HomeComponent'
+import privacy from './components/privacy'
 import './App.css'
 import SearchResultComponent from "./components/SearchResultComponent";
 
@@ -62,6 +63,9 @@ function App() {
                 <Route path='/posts'
                    component={PostsComponent}>
                 </Route>
+                <Route path='/privacy'
+                                   component={privacy}>
+                                </Route>
       </BrowserRouter>
     </div>  
   );

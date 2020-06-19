@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 import NavBarComponent from "./NavBarComponent";
 import Background from './pick.jpg';
 import { Col,Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
@@ -94,7 +95,7 @@ class SearchComponent extends React.Component {
                      </div>
                      </body>
                      <footer style={{backgroundImage: `url(${Background})`}
-} className='footer mt-auto py-3 bg-dark text-white'>
+} className='footer mt-auto py-3 bg-dark text-white footercss'>
 
                              <div class="container">
                                        <div class="row row-30">
@@ -121,8 +122,21 @@ class SearchComponent extends React.Component {
                                            </dl>
                                          </div>
                                          <div class="col-md-4 col-xl-3">
-                                           <h5>Links</h5>
-                                           <ul class="nav-list">
+                                          <h5>Links</h5>
+                                         <dl class="link-list">
+
+                                          <dt>
+
+                                            <Link to="/privacy">
+                                                  <font color={'white'}>
+                                                Privacy Policy
+                                                             </font>
+                                                  </Link>
+
+                                                   </dt>
+
+                                                   </dl>
+                                                               <ul class="nav-list">
                                             <span className="btn-icon btn-info btn-round"
                                             >
                                                                         <i className="btn fa fa-facebook-square btn-danger"></i>
