@@ -1,4 +1,4 @@
-export const fetchProfile = () =>
+ const fetchProfile = () =>
   fetch("http://localhost:8080/api/profile", {
     method: 'POST',
     credentials: "include"
@@ -7,7 +7,7 @@ export const fetchProfile = () =>
     return response.json()
   })
 
-   export const fetchImages = () =>
+    const fetchImages = () =>
      fetch("http://localhost:8080/api/post", {
        method: 'POST',
        credentials: "include"
@@ -15,3 +15,8 @@ export const fetchProfile = () =>
      .then(response => {
        return response.json()
      })
+
+      export default {
+          fetchProfile,
+          fetchImages
+      }

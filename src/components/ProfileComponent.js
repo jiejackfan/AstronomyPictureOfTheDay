@@ -184,11 +184,9 @@ export default class ProfileComponent extends React.Component {
                             </button>
                             <a className="form-control btn btn-danger btn-block wbdv-button wbdv-logout"
                              onClick={this.logout}>
-
-
-
                                 Logout
-                            </button>
+                                </a>
+
 
                         </div>
                     </div>
