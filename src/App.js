@@ -9,58 +9,57 @@ import AboutComponent from './components/AboutComponent'
 import './App.css'
 import SearchResultComponent from "./components/SearchResultComponent";
 import HomeComponent from "./components/HomeComponent";
-import ProfileComponent from "./components/ProfileComponent";
 
 function App() {
-  return (
-    <div className="app container-fluid">
-      <BrowserRouter>
+    return (
+        <div className="app container-fluid">
+            <BrowserRouter>
 
-        <Route path='/'
-               exact={true}
-               component={HomeComponent}>
-        </Route>
-        <Route path='/search'
-               exact={true}
-               component={SearchComponent}>
-        </Route>
+                <Route path='/'
+                       exact={true}
+                       component={HomeComponent}>
+                </Route>
+                <Route path='/search'
+                       exact={true}
+                       component={SearchComponent}>
+                </Route>
 
-        <Route path='/apods/:date'
-               component={DetailsComponent}>
-        </Route>
+                <Route path='/apods/:date'
+                       component={DetailsComponent}>
+                </Route>
 
-        <Route path='/apods-date-range/:startDate/:endDate/'
-               component={SearchResultComponent}>
-        </Route>
+                <Route path='/apods-date-range/:startDate/:endDate/'
+                       component={SearchResultComponent}>
+                </Route>
 
-        <Route path='/register'
-               component={RegisterComponent}>
-        </Route>
+                <Route path='/register'
+                       component={RegisterComponent}>
+                </Route>
 
-        <Route path='/profile'
-               component={ProfileComponent}>
-        </Route>
-
-        <Route path='/profile/:uid'
-                component={ProfileComponent}>
-        </Route>
-
-
-        <Route path='/login'
-               component={LoginComponent}>
-        </Route>
-           <Route path='/profile'
+                <Route path='/profile'
+                       exact={true}
                        component={ProfileComponent}>
                 </Route>
-                 <Route path='/about'
-                                       component={AboutComponent}>
-                                </Route>
-                                <Route path='/home'
-                                                                       component={SearchComponent}>
-                                                                </Route>
-      </BrowserRouter>
-    </div>  
-  );
+
+                <Route path='/profile/:uid'
+               exact={true}
+                component={ProfileComponent}>
+                </Route>
+
+
+                <Route path='/login'
+                       component={LoginComponent}>
+                </Route>
+
+                <Route path='/about'
+                       component={AboutComponent}>
+                </Route>
+                <Route path='/home'
+                       component={SearchComponent}>
+                </Route>
+            </BrowserRouter>
+        </div>
+    );
 }
 
 export default App;
