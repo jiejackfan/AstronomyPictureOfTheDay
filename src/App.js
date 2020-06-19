@@ -6,6 +6,8 @@ import RegisterComponent from './components/RegisterComponent'
 import LoginComponent from './components/LoginComponent'
 import ProfileComponent from './components/ProfileComponent'
 import AboutComponent from './components/AboutComponent'
+import PostsComponent from './components/PostsComponent'
+import HomeComponent from './components/HomeComponent'
 import './App.css'
 import SearchResultComponent from "./components/SearchResultComponent";
 import HomeComponent from "./components/HomeComponent";
@@ -20,10 +22,7 @@ function App() {
                exact={true}
                component={HomeComponent}>
         </Route>
-        <Route path='/search'
-               exact={true}
-               component={SearchComponent}>
-        </Route>
+        
 
         <Route path='/apods/:date'
                component={DetailsComponent}>
@@ -50,14 +49,20 @@ function App() {
                component={LoginComponent}>
         </Route>
            <Route path='/profile'
-                       component={ProfileComponent}>
+            component={ProfileComponent}>
+              </Route>
+         <Route path='/about'
+         component={AboutComponent}>
                 </Route>
-                 <Route path='/about'
-                                       component={AboutComponent}>
-                                </Route>
-                                <Route path='/home'
-                                                                       component={SearchComponent}>
-                                                                </Route>
+                <Route path='/home'
+                component={SearchComponent}>
+                  </Route>
+                  <Route path='/search'
+                                  component={SearchComponent}>
+                                    </Route>
+                <Route path='/posts'
+                   component={PostsComponent}>
+                </Route>
       </BrowserRouter>
     </div>  
   );

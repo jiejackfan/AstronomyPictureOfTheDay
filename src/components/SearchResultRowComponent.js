@@ -10,10 +10,11 @@ export default class SearchResultRowComponent extends React.Component {
             <tr>
                 <td>{this.props.apod.title}</td>
                 <td>{this.props.apod.date}</td>
-                <td><img src={this.props.apod.url} height='200px' alt='picture'/></td>
+                <td><img src={this.props.apod.url} height='200px' width='250px' alt='picture'/></td>
                 <td>
                         <Link to={`/apods/${this.props.apod.date}`}>
-                            details
+                           <button className="fa fa-info-circle fa-2x btn-danger">
+                           </button>
                         </Link>
                 </td>
             </tr>
