@@ -1,5 +1,6 @@
 import React from "react";
-
+import {Link} from "react-router-dom";
+import Background from './pick.jpg';
 export default class ProfileComponent extends React.Component {
 
     state={
@@ -52,8 +53,17 @@ export default class ProfileComponent extends React.Component {
 
     render() {
         return(
-            <div>
-                <h1>Profile</h1>
+            <div className=" container ">
+             <font color={'white'}>
+                <h1 style={{backgroundImage: `url(${Background})`}}>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    &nbsp;&nbsp;Profile
+                    <Link to="/home">
+                           <i class="fa fa-home float-right btn-sm" aria-hidden="true"></i>
+                           </Link>
+                    &nbsp;&nbsp;&nbsp;&nbsp;</h1>
+                 </font>
+
 
                 <div className="alert alert-success wbdv-message" role="alert">
                     Profile successfully saved
@@ -122,7 +132,7 @@ export default class ProfileComponent extends React.Component {
                     <div className="form-group row">
                         <label htmlFor="roleFld"
                                className="col-form-label col-sm-2">
-                            Role
+                            Profile Type
                         </label>
                         <div className="col-sm-10">
                             <select className="form-control wbdv-field wbdv-role"
@@ -130,7 +140,8 @@ export default class ProfileComponent extends React.Component {
 
                                     }}
                                     id="roleFld">
->                                <option value="STUDENT">Student</option>
+                                <option value="USER">Student</option>
+
                                 <option value="ADMIN">Admin</option>
                             </select>
                         </div>
