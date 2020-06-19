@@ -3,7 +3,8 @@ import {Link} from "react-router-dom";
 import Background from './pick.jpg';
 import  "./Footer.css";
 export default class ProfileComponent extends React.Component {
-state={
+
+    state={
         user:{
             username:'',
             password:'',
@@ -79,7 +80,9 @@ state={
                                    className="form-control wbdv-field wbdv-username"
                                    placeholder="jiejackfan"
                                    title="Use this to login"
+
                                       value={this.state.user.username}
+
                                    readOnly/>
                         </div>
                     </div>
@@ -90,8 +93,10 @@ state={
                         <div className="col-sm-10">
                             <input id="passwordFld"
                                    type="password"
+
                                     value={this.state.user.password}
                                      onChange={e=>this.setState({user:{password:e.target.value}})}
+
                                    className="form-control wbdv-field wbdv-password"
                                    title="Enter the password you set for this account"/>
                         </div>
@@ -104,7 +109,9 @@ state={
                             <input id="phoneFld"
                                    type="text"
                                    value={this.state.user.phone}
+
                                       onChange={e=>this.setState({user:{phone:e.target.value}})}
+
                                    className="form-control wbdv-field wbdv-phone"
                                    title="Enter your phone number"
                                    placeholder="(617)-309 0330"
@@ -121,8 +128,10 @@ state={
                             <input type="email"
                                    className="form-control wbdv-field wbdv-email"
                                    id="emailFld"
+
                                     value={this.state.user.email}
                           onChange={e=>this.setState({user:{email:e.target.value}})}
+
                                    title="Enter your email address"
                                    placeholder="fan.jie1@husky.neu.edu"
                             />
@@ -136,6 +145,9 @@ state={
                         </label>
                         <div className="col-sm-10">
                             <select className="form-control wbdv-field wbdv-role"
+                                    onChange={event => {
+
+                                    }}
                                     id="roleFld">
                                      onChange={event => {  }} id="roleFld">
                                 <option value="STUDENT">Student</option>
@@ -157,15 +169,15 @@ state={
                                    value={this.state.user.dateOfBirth}
                            onChange={e=>this.setState({user:{dateOfBirth:e.target.value}})}
                                    id="dobFld"
-                                   value="2020-05-08"
                             />
                         </div>
                     </div>
 
                     <div className="form-group row">
-                        <label className="col-form-label col-sm-2"></label>
+                        <label className="col-form-label col-sm-2"/>
                         <div className="col-sm-10">
                             <button className="form-control btn btn-success btn-block wbdv-button wbdv-update"
+
                              onClick={this.update}>
                             >
                                 Update
@@ -173,8 +185,10 @@ state={
                             <a className="form-control btn btn-danger btn-block wbdv-button wbdv-logout"
                              onClick={this.logout}>
 
+
+
                                 Logout
-                            </a>
+                            </button>
 
                         </div>
                     </div>
