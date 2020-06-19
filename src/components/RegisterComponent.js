@@ -17,38 +17,37 @@ Jumbotron,
   ReactCenter,
 } from "reactstrap";
 export default class Register extends React.Component {
-    state = {
-        username: '',
-        password: '',
-        email: ''
-    }
+     state = {
+            username: '',
+            password: '',
+            email: ''
+        }
 
-
-
- register = () => {
-     fetch("https://fan-free-joshi-server.herokuapp.com/api/register", {
-       body: JSON.stringify({
-         email: this.state.email,
-         username: this.state.username,
-         password: this.state.password
-       }),
-       headers: {
-         'content-type': 'application/json'
-       },
-       method: 'POST',
-       credentials: "include"
-     }).then(response => response.json())
-       .catch(e => {
-         this.setState({
-           error: 'Unable to register'
-         })
-       })
-       .then(currentUser => {
-         if(currentUser) {
-           this.props.history.push("/profile")
-         }
-       })
-   }
+        register = () => {
+            fetch("https://fan-free-joshi-server.herokuapp.com/api/register"
+                /*"http://localhost:8080/api/register"*/, {
+                body: JSON.stringify({
+                    email: this.state.email,
+                    username: this.state.username,
+                    password: this.state.password
+                }),
+                headers: {
+                    'content-type': 'application/json'
+                },
+                method: 'POST',
+                credentials: "include"
+            }).then(response => response.json())
+                .catch(e => {
+                    this.setState({
+                        error: 'Unable to register'
+                    })
+                })
+                .then(currentUser => {
+                    if (currentUser) {
+                        this.props.history.push("/profile")
+                    }
+                })
+        }
                 render() {
                     return(
                          <div className="container ">
@@ -104,7 +103,7 @@ export default class Register extends React.Component {
 
 <Link to="/profile">
   <button type="submit" className="btn btn-success btn-block"
-                  onClick={() => this.register(this.state)}
+                  onClick={this.register}
                      >
                     Register
             </button>

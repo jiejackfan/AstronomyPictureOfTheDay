@@ -6,30 +6,30 @@ import  "./Footer.css";
 export default class Login extends React.Component {
 
  state = {
-        username: '',
-        password: ''
-    }
+         username: '',
+         password: ''
+     }
 
-  login = () => {
-     fetch("http://localhost:8080/api/login", {
-       body: JSON.stringify({
-         username: this.state.username,
-         password: this.state.password}),
-       headers: {
-         'content-type': 'application/json'
-       },
-       method: 'POST',
-       credentials: "include"
-     }).then(response => response.json())
-       .catch(e => {
-         this.props.history.push("/login")
-       })
-       .then(currentUser => {
-         if(currentUser)
-           this.props.history.push("/profile")
-       })
+     login = () => {
+         fetch("http://localhost:8080/api/login", {
+             body: JSON.stringify({
+                 username: this.state.username,
+                 password: this.state.password}),
+             headers: {
+                 'content-type': 'application/json'
+             },
+             method: 'POST',
+             credentials: "include"
+         }).then(response => response.json())
+             .catch(e => {
+                 this.props.history.push("/login")
+             })
+             .then(currentUser => {
+                 if(currentUser)
+                     this.props.history.push("/profile")
+             })
 
-   }
+     }
 render() {
         return (
         <div className="container" >
@@ -68,7 +68,7 @@ render() {
                 </div>
 
                 <button type="submit" className="btn btn-danger btn-block"
-                             onClick={() => this.login(this.state)}>
+                             onClick={() => this.login}>
 
                  Sign in</button>
                 <p className="forgot-password text-right">
