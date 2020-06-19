@@ -10,8 +10,7 @@ import PostsComponent from './components/PostsComponent'
 import HomeComponent from './components/HomeComponent'
 import './App.css'
 import SearchResultComponent from "./components/SearchResultComponent";
-import HomeComponent from "./components/HomeComponent";
-import ProfileComponent from "./components/ProfileComponent";
+
 
 function App() {
   return (
