@@ -13,7 +13,7 @@ Jumbotron,
   Row,
   Col,
 } from "reactstrap";
-import Background from './pic.jpg';
+import Background from './pick.jpg';
 const AboutComponent = () =>{
 
 return (
