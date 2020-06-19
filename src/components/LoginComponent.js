@@ -3,47 +3,48 @@ import {login} from "../services/UserService";
 import {Link} from "react-router-dom";
 import Background from './pick.jpg';
 
-export default class LoginComponent extends React.Component {
+import  "./Footer.css";
+export default class Login extends React.Component {
 
-    state = {
-        username: '',
-        password: ''
-    }
+ state = {
+         username: '',
+         password: ''
+     }
 
-    login = () => {
-        fetch("http://localhost:8080/api/login", {
-            body: JSON.stringify({
-                username: this.state.username,
-                password: this.state.password}),
-            headers: {
-                'content-type': 'application/json'
-            },
-            method: 'POST',
-            credentials: "include"
-        }).then(response => response.json())
-            .catch(e => {
-                this.props.history.push("/login")
-            })
-            .then(currentUser => {
-                if(currentUser)
-                    this.props.history.push("/profile")
-            })
+     login = () => {
+         fetch("http://localhost:8080/api/login", {
+             body: JSON.stringify({
+                 username: this.state.username,
+                 password: this.state.password}),
+             headers: {
+                 'content-type': 'application/json'
+             },
+             method: 'POST',
+             credentials: "include"
+         }).then(response => response.json())
+             .catch(e => {
+                 this.props.history.push("/login")
+             })
+             .then(currentUser => {
+                 if(currentUser)
+                     this.props.history.push("/profile")
+             })
 
-    }
-
-    render() {
+     }
+render() {
         return (
- /*           <div className="container">
-                <form>
-                    <font color={'white'}>
-                        <h3 style={{backgroundImage: `url(${Background})`}}>
-                            <i className="fa fa-star" aria-hidden="true"/>
-                            &nbsp;&nbsp;Login
-                            <Link to="/home">
-                                <i className="fa fa-home float-right btn-sm" aria-hidden="true"/>
-                            </Link>
-                            &nbsp;&nbsp;&nbsp;&nbsp;
-                        </h3>
+        <div className="container" >
+<form style={{backgroundColor: "#F0FFFF"},{paddingBottom: 300}} >
+ <font color={'white'}>
+<h3 style={{backgroundImage: `url(${Background})`}}>
+<i class="fa fa-star" aria-hidden="true"></i>
+&nbsp;&nbsp;Login
+<Link to="/home">
+       <i class="fa fa-home float-right btn-sm" aria-hidden="true"></i>
+       </Link>
+&nbsp;&nbsp;&nbsp;&nbsp;
+</h3>
+
 
                     </font>
                     <div style={{paddingTop: 15}} className="form-group">
@@ -68,30 +69,79 @@ export default class LoginComponent extends React.Component {
                         </div>
                     </div>
 
-                    <button className="btn btn-danger btn-block"
-                            onClick={this.login}>
-                        Sign in
-                    </button>
-                    <p className="forgot-password text-right">
-                        <Link to="/register">Sign up</Link>
-                    </p>
-                </form>
-            </div>*/
 
-            <div>
-                <h1>Login</h1>
-                <input
-                    onChange={(e) => this.setState({username: e.target.value})}
-                    className="form-control"/>
-                <input
-                    onChange={(e) => this.setState({password: e.target.value})}
-                    className="form-control"/>
-                <button
-                    onClick={this.login}
-                    className="btn btn-primary">
-                    Login
-                </button>
-                <Link to="/register">Sign up</Link>
+                <button type="submit" className="btn btn-danger btn-block"
+                             onClick={() => this.login}>
+
+                 Sign in</button>
+                <p className="forgot-password text-right">
+                      <Link to="/register">Sign up</Link>
+                </p>
+            </form>
+              <footer style={{backgroundImage: `url(${Background})`}
+            } className='footer mt-auto py-3 bg-dark text-white footercss'>
+
+                                         <div class="container">
+                                                   <div class="row row-30">
+                                                     <div class="col-md-4 col-xl-5">
+                                                       <div class="pr-xl-4"><a class="brand" >
+                                                       </a>
+                                                         <p>We are an online platform that encourages astronomical adventures from your own screen .</p>
+
+                                                         <p class="rights"><span>©  </span><span class="copyright-year">2020</span><span> </span><span>Fan-Free-Joshi</span><span>. </span><span>All Rights Reserved.</span></p>
+                                                       </div>
+                                                     </div>
+                                                     <div class="col-md-4">
+                                                       <h5>Contacts</h5>
+                                                       <dl class="contact-list">
+                                                         <dt>Address:</dt>
+                                                         <dd>780 Columbus  Avenue, Boston, MA </dd>
+                                                       </dl>
+                                                       <dl class="contact-list">
+                                                         <dt>email:</dt>
+                                                         <dd> starmaps@gmail.com </dd>
+                                                       </dl>
+                                                       <dl class="contact-list">
+
+                                                       </dl>
+                                                     </div>
+                                                     <div class="col-md-4 col-xl-3">
+                                                      <h5>Links</h5>
+                                                     <dl class="link-list">
+
+                                                      <dt>
+
+                                                        <Link to="/privacy">
+                                                              <font color={'white'}>
+                                                            Privacy Policy
+                                                                         </font>
+                                                              </Link>
+
+                                                               </dt>
+
+                                                               </dl>
+                                                                           <ul class="nav-list">
+                                                        <span className="btn-icon btn-info btn-round"
+                                                        >
+                                                                                    <i className="btn fa fa-facebook-square btn-danger"></i>
+                                                                                  </span>
+                                                                                  &nbsp;&nbsp;
+                                                                                  <span
+                                                                                    className="btn-icon btn-round "
+
+
+                                                                                  >
+                                                                                    <i className="btn fa fa-twitter btn-danger"></i>
+                                                                                  </span>
+
+                                                       </ul>
+                                                     </div>
+                                                   </div>
+                                                 </div>
+
+                                       </footer>
+    
+
             </div>
         );
     }
