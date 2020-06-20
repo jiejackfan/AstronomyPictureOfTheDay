@@ -4,7 +4,7 @@ import Background from './pick.jpg';
 import  "./Footer.css";
 export default class ProfileComponent extends React.Component {
 
-    state={
+state={
         user:{
             username:'',
             password:'',
@@ -17,7 +17,8 @@ export default class ProfileComponent extends React.Component {
     }
 
     componentDidMount() {
-        fetch("http://localhost:8080/api/profile",{
+        fetch("https://fan-free-joshi-server.herokuapp.com/api/profile"
+            /*"http://localhost:8080/api/profile"*/,{
             method:"POST",
             credentials:"include"
         }).then(response=>response.json())
@@ -45,7 +46,8 @@ export default class ProfileComponent extends React.Component {
     }
 
     logout=()=>{
-        fetch("http://localhost:8080/api/logout", {
+        fetch("https://fan-free-joshi-server.herokuapp.com/api/logout"
+            /*"http://localhost:8080/api/logout"*/, {
             method: 'POST',
             credentials: "include"
         })
