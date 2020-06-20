@@ -10,14 +10,7 @@ export default class PostsComponent extends React.Component {
     }
 
     componentDidMount() {
-      fetch("http://localhost:8080/api/posts", {
-          method: 'POST',
-          credentials: "include"
-        })
-        .then(response => {
-          return response.json()
-        })
-
+      this.setState.posts = PostService.findAllPosts()
     }
 
  render() {
