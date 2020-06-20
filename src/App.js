@@ -17,69 +17,66 @@ function App() {
         <div className="app container-fluid">
             <BrowserRouter>
 
-        <Route path='/'
-               exact={true}
-               component={HomeComponent}>
-        </Route>
+                <Route path='/'
+                       exact={true}
+                       component={HomeComponent}>
+                </Route>
 
 
                 <Route path='/result/:date'
-                 exact={true}
+                       exact={true}
                        component={DetailsComponent}>
                 </Route>
 
                 <Route path='/result/startdate/:startDate/endDate/:endDate/'
-                 exact={true}
+                       exact={true}
                        component={SearchResultComponent}>
                 </Route>
 
                 <Route path='/register'
-                 exact={true}
+                       exact={true}
                        component={RegisterComponent}>
                 </Route>
 
                 <Route path='/profile'
-                 exact={true}
+                       exact={true}
 
                        component={ProfileComponent}>
                 </Route>
 
                 <Route path='/profile/:uid'
-               exact={true}
-                component={ProfileComponent}>
+                       exact={true}
+                       component={ProfileComponent}>
                 </Route>
 
 
-        <Route path='/login'
-         exact={true}
-               component={LoginComponent}>
-        </Route>
-           <Route path='/profile'
-            exact={true}
-            component={ProfileComponent}>
-              </Route>
-         <Route path='/about'
-         component={AboutComponent}>
+                <Route path='/login'
+                       exact={true}
+                       component={LoginComponent}>
+                </Route>
+
+                <Route path='/about'
+                       component={AboutComponent}>
                 </Route>
                 <Route path='/home'
-                component={SearchComponent}>
-                  </Route>
-                  <Route path='/search'
-                                  component={SearchComponent}>
-                                    </Route>
+                       component={SearchComponent}>
+                </Route>
+                <Route path='/search'
+                       component={SearchComponent}>
+                </Route>
                 <Route path='/posts'
-                   component={PostsComponent}>
+                       component={PostsComponent}>
                 </Route>
                 <Route path='/privacy'
-                                   component={privacy}>
-                                </Route>
-                                <Route path='/postpicture/:date'
-                                                                   component={SearchComponent}>
-                                                                </Route>
+                       component={privacy}>
+                </Route>
+                <Route path='/postpicture/:date'
+                       component={SearchComponent}>
+                </Route>
 
-      </BrowserRouter>
-    </div>  
-  );
+            </BrowserRouter>
+        </div>
+    );
 }
 
 export default App;
