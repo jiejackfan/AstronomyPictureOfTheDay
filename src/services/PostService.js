@@ -29,4 +29,11 @@
     .then(response => {
       return response.json()
     })
+
+  export default {
+    findAllPosts,
+    findPostForUser,
+    createPost,
+    deletePostById
+  }
   
