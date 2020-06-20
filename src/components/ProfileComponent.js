@@ -17,7 +17,7 @@ export default class ProfileComponent extends React.Component {
     }
 
     componentDidMount() {
-        fetch("http://localhost:8080/api/profile",{
+        fetch("https://fan-free-joshi-server.herokuapp.com/api/profile",{
             method:"POST",
             credentials:"include"
         }).then(response=>response.json())
@@ -30,7 +30,7 @@ export default class ProfileComponent extends React.Component {
 
 
     update = () => {
-        fetch("http://localhost:8080/api/profile", {
+        fetch("https://fan-free-joshi-server.herokuapp.com/api/profile", {
             body: JSON.stringify(this.state.user),
             headers: {
                 'content-type': 'application/json'
