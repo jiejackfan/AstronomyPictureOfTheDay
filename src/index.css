@@ -5,9 +5,17 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  margin-bottom: 100px;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+ html, body, #root, #root>div {
+    height: 100%;
+    margin: 0;
+  }
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
