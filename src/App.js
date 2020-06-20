@@ -21,23 +21,26 @@ function App() {
                exact={true}
                component={HomeComponent}>
         </Route>
-        
 
 
-                <Route path='/apods/:date'
+                <Route path='/result/:date'
+                 exact={true}
                        component={DetailsComponent}>
                 </Route>
 
-                <Route path='/apods-date-range/:startDate/:endDate/'
+                <Route path='/result/startdate/:startDate/endDate/:endDate/'
+                 exact={true}
                        component={SearchResultComponent}>
                 </Route>
 
                 <Route path='/register'
+                 exact={true}
                        component={RegisterComponent}>
                 </Route>
 
                 <Route path='/profile'
-                       exact={true}
+                 exact={true}
+
                        component={ProfileComponent}>
                 </Route>
 
@@ -48,9 +51,11 @@ function App() {
 
 
         <Route path='/login'
+         exact={true}
                component={LoginComponent}>
         </Route>
            <Route path='/profile'
+            exact={true}
             component={ProfileComponent}>
               </Route>
          <Route path='/about'
@@ -68,6 +73,10 @@ function App() {
                 <Route path='/privacy'
                                    component={privacy}>
                                 </Route>
+                                <Route path='/postpicture/:date'
+                                                                   component={SearchComponent}>
+                                                                </Route>
+
       </BrowserRouter>
     </div>  
   );
