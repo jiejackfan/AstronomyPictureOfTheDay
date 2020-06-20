@@ -107,8 +107,7 @@ export default class Register extends React.Component {
 <Link to="/profile">
   <button type="submit" className="btn btn-success btn-block"
                   onClick={this.register}
-                     >
-                    Register
+                     > Register
             </button>
                    </Link>
                  <p className="forgot-password text-right">
