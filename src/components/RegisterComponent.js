@@ -21,8 +21,74 @@ export default class Register extends React.Component {
      state = {
             username: '',
             password: '',
-            email: ''
+            email: '',
+            role: ''
         }
+  componentDidMount = () => this.props.authenticatedUser || this.props.setUser()
+//handlechange
+  onChangeName = ev => this.setState({username: ev.target.value})
+    onChangeEmail = ev => this.setState({email: ev.target.value})
+    onChangePassword = ev => this.setState({password: ev.target.value})
+    onChangeRole = ev => this.setState({role: ev.target.value})
+  // to handle submit
+  requiredFields = ['username', 'password', 'email', 'role']
+  handleSubmit = async ev => {
+        ev.preventDefault()
+
+        for (let r in this.requiredFields) {
+            let requiredField = this.requiredFields[r]
+            $(`#${requiredField}`).removeClass('is-invalid')
+            $(`[for=${requiredField}]`).removeClass('text-danger')
+        }
+        this.setState({isLocationInvalid: false})
+        $('#emailInvalidMessage').attr('hidden', true)
+        $('#passwordMessage').attr('hidden', true)
+        $('#userNameMessage').attr('hidden', true)
+
+
+        let isValidEmail = emailRegex.test(this.state.email.toLowerCase())
+        let isEmailInUse = false
+        if (isValidEmail) {
+            let userWithEmail = await UserService.findUserByEmail(this.state.email)
+            isEmailInUse = userWithEmail.length > 0
+        }
+
+        if (this.state.username && isValidEmail && !isEmailInUse &&
+            passwordRegex.test(this.state.password) && this.state.role) {
+            let user = {
+                name: this.state.name,
+
+                email: this.state.email,
+                password: this.state.password,
+                role: this.state.role
+            }
+            UserService.createUser(user).then(user => {
+                this.props.setUser(user)
+                this.props.history.push('/profile')
+            })
+        } else {
+            if (!this.state.name) {
+                $('#name').addClass('is-invalid')
+                $('[for=name]').addClass('text-danger')
+            }
+
+            if (!isValidEmail) {
+                $('#email').addClass('is-invalid')
+                $('[for=email]').addClass('text-danger')
+                $('#emailInvalidMessage').removeAttr('hidden')
+            } else if (isEmailInUse) {
+                $('#email').addClass('is-invalid')
+                $('[for=email]').addClass('text-danger')
+                $('#emailExistsMessage').removeAttr('hidden')
+            }
+            if (!passwordRegex.test(this.state.password)) {
+                $('#password').addClass('is-invalid')
+                $('[for=password]').addClass('text-danger')
+                $('#passwordMessage').removeAttr('hidden')
+            }
+        }
+    }
+
 
         register = () => {
             fetch("https://fan-free-joshi-server.herokuapp.com/api/register"
@@ -63,9 +129,8 @@ export default class Register extends React.Component {
                      </Link>
                      </h3>
                       </font>
-                     {
-                              this.state.error &&
-                              <div className="alert alert-ndanger">
+                     {   this.state.error &&
+                              <div className="alert alert-danger">
                                 {this.state.error}
                               </div>
                             }
@@ -184,4 +249,3 @@ export default class Register extends React.Component {
                       }
                       }
 
-                   

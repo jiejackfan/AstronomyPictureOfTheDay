@@ -8,10 +8,33 @@ export default class LoginComponent extends React.Component {
 
     state = {
         username: '',
-        password: ''
+   password: '',
+          invalidCredentials: false
 
     }
+componentDidMount = () => this.props.authenticatedUser ||
+        UserService.findLoggedInUser().then(user => this.props.logInUser(user))
 
+
+        //new
+
+    handleSubmit = ev => {
+        ev.preventDefault()
+        if (this.state.email && this.state.password) {
+            let credentials = {
+                email: this.state.email,
+                password: this.state.password
+            }
+            UserService.logInUser(credentials).then(user => {
+                if (user) {
+                    this.props.logInUser(user)
+                } else {
+                    this.setState({invalidCredentials: true})
+                }
+            })
+        }
+    }
+    //new
     login = () => {
         fetch("https://fan-free-joshi-server.herokuapp.com/api/login"
             /*"http://localhost:8080/api/login"*/, {
@@ -36,6 +59,8 @@ export default class LoginComponent extends React.Component {
 
     render() {
         return (
+  this.props.authenticatedUser ?
+        <Redirect to="/" /> :
 
          <div className="container" >
          <form>
