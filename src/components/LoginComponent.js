@@ -9,6 +9,7 @@ export default class LoginComponent extends React.Component {
     state = {
         username: '',
         password: ''
+
     }
 
     login = () => {

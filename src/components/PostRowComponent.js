@@ -6,7 +6,10 @@ export default class PostRowComponent extends React.Component {
 
     render() {
         return (
-     <td><img src={this.props.posts.url} height='200px' width='250px' alt='picture'/></td>
+            <tr>
+                <td>{this.props.post.caption}</td>
+                <td>{this.props.post.apod}</td>
+            </tr>
 
         );
     }
