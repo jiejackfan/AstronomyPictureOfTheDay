@@ -39,15 +39,7 @@ export default class LoginComponent extends React.Component {
          <div className="container" >
          <form>
           <font color={'white'}>
-                                <h1 style={{backgroundImage: `url(${Background})`}}>
-                                   <i class="fa fa-star" aria-hidden="true"></i>
-                                 &nbsp;&nbsp;Login
-                                <Link to="/home">
-                                       <i class="fa fa-home float-right btn-sm" aria-hidden="true"></i>
-                                       </Link>
-                                &nbsp;&nbsp;&nbsp;&nbsp;
-
-                                </h1>
+                                <h1 style={{backgroundImage: `url(${Background})`}}> &nbsp;&nbsp;Login</h1>
                                  </font>
    <FormGroup>
         <Label for="exampleEmail">Email</Label>
@@ -66,90 +58,80 @@ export default class LoginComponent extends React.Component {
                                      type="password" name="password"
                                     />
                                      </FormGroup>
-                                     <div className="form-group">
-                                                             <div className="custom-control custom-checkbox">
-                                                                 <input type="checkbox" className="custom-control-input" id="customCheck1"/>
-                                                   <label className="custom-control-label" htmlFor="customCheck1">Remember me</label>
-                                                             </div>
-                                                         </div>
-
-                                <button type="submit" className="btn btn-danger btn-block"
+                                <button
                                     onClick={this.login}
                                     className="btn btn-primary">
                                     Login
                                 </button>
-
-
-                                        <p className="register text-right">
-                                                             <Link to="/register">Sign up</Link>
-                                                       </p>
-
+                                <p className="text-right">
+                                <Link to="/register" >Sign up</Link>
+                                </p>
                                  </form>
-                             <footer style={{backgroundImage: `url(${Background})`}
-                                       } className='footer mt-auto py-3 bg-dark text-white footercss'>
 
-                                                                    <div class="container">
-                                                                              <div class="row row-30">
-                                                                                <div class="col-md-4 col-xl-5">
-                                                                                  <div class="pr-xl-4"><a class="brand" >
-                                                                                  </a>
-                                                                                    <p>We are an online platform that encourages astronomical adventures from your own screen .</p>
+  <footer style={{backgroundImage: `url(${Background})`}}
+   className='footer mt-auto py-3 bg-dark text-white footercss'>
 
-                                                                                    <p class="rights"><span>©  </span><span class="copyright-year">2020</span><span> </span><span>Fan-Free-Joshi</span><span>. </span><span>All Rights Reserved.</span></p>
-                                                                                  </div>
-                                                                                </div>
-                                                                                <div class="col-md-4">
-                                                                                  <h5>Contacts</h5>
-                                                                                  <dl class="contact-list">
-                                                                                    <dt>Address:</dt>
-                                                                                    <dd>780 Columbus  Avenue, Boston, MA </dd>
-                                                                                  </dl>
-                                                                                  <dl class="contact-list">
-                                                                                    <dt>email:</dt>
-                                                                                    <dd> starmaps@gmail.com </dd>
-                                                                                  </dl>
-                                                                                  <dl class="contact-list">
+                             <div class="container ">
+                                       <div class="row row-30">
+                                         <div class="col-md-4 col-xl-5">
+                                           <div class="pr-xl-4"><a class="brand" >
+                                           </a>
+                                             <p>We are an online platform that encourages astronomical adventures from your own screen .</p>
 
-                                                                                  </dl>
-                                                                                </div>
-                                                                                <div class="col-md-4 col-xl-3">
-                                                                                 <h5>Links</h5>
-                                                                                <dl class="link-list">
+                                             <p class="rights"><span>©  </span><span class="copyright-year">2020</span><span> </span><span>Fan-Free-Joshi</span><span>. </span><span>All Rights Reserved.</span></p>
+                                           </div>
+                                         </div>
+                                         <div class="col-md-4">
+                                           <h5>Contacts</h5>
+                                           <dl class="contact-list">
+                                             <dt>Address:</dt>
+                                             <dd>780 Columbus  Avenue, Boston, MA </dd>
+                                           </dl>
+                                           <dl class="contact-list">
+                                             <dt>email:</dt>
+                                             <dd> starmaps@gmail.com </dd>
+                                           </dl>
+                                           <dl class="contact-list">
 
-                                                                                 <dt>
+                                           </dl>
+                                         </div>
+                                         <div class="col-md-4 col-xl-3">
+                                          <h5>Links</h5>
+                                         <dl class="link-list">
 
-                                                                                   <Link to="/privacy">
-                                                                                         <font color={'white'}>
-                                                                                       Privacy Policy
-                                                                                                    </font>
-                                                                                         </Link>
+                                          <dt>
 
-                                                                                          </dt>
+                                            <Link to="/privacy">
+                                                  <font color={'white'}>
+                                                Privacy Policy
+                                                             </font>
+                                                  </Link>
 
-                                                                                          </dl>
-                                                                                                      <ul class="nav-list">
-                                                                                   <span className="btn-icon btn-info btn-round"
-                                                                                   >
-                                                                                                               <i className="btn fa fa-facebook-square btn-danger"></i>
-                                                                                                             </span>
-                                                                                                             &nbsp;&nbsp;
-                                                                                                             <span
-                                                                                                               className="btn-icon btn-round "
+                                                   </dt>
 
-
-                                                                                                             >
-                                                                                                               <i className="btn fa fa-twitter btn-danger"></i>
-                                                                                                             </span>
-
-                                                                                  </ul>
-                                                                                </div>
-                                                                              </div>
-                                                                            </div>
-
-                                                                  </footer>
+                                                   </dl>
+                                                               <ul class="nav-list">
+                                            <span className="btn-icon btn-info btn-round"
+                                            >
+                                                                        <i className="btn fa fa-facebook-square btn-danger"></i>
+                                                                      </span>
+                                                                      &nbsp;&nbsp;
+                                                                      <span
+                                                                        className="btn-icon btn-round "
 
 
+                                                                      >
+                                                                        <i className="btn fa fa-twitter btn-danger"></i>
+                                                                      </span>
+
+                                           </ul>
+                                         </div>
                                        </div>
-                                   );
-                               }
-                           }
+                                     </div>
+
+                           </footer>
+
+</div>
+                      );
+                      }
+                      }
