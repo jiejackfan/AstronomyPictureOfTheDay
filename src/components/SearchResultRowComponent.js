@@ -46,8 +46,12 @@ export default class SearchResultRowComponent extends React.Component {
                                              placeholder="add a caption"
                                                onChange={(event) => this.savePostTitle(event.target.value)}
 
+
                                             />
-                                                         <button className="btn btn-warning"onClick={this.submitPost} >
+                                                         <button className="btn btn-warning"
+                                                         onClick={this.submitPost}
+
+                                                          >
                                                            Post </button>
                                                          <button
                                                            className="btn btn-danger"

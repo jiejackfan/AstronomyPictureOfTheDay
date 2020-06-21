@@ -50,6 +50,7 @@ function App() {
                 </Route>
 
 
+
                 <Route path='/login'
                        exact={true}
                        component={LoginComponent}>
@@ -57,6 +58,7 @@ function App() {
 
                 <Route path='/about'
                        component={AboutComponent}>
+
                 </Route>
                 <Route path='/home'
                        component={SearchComponent}>
