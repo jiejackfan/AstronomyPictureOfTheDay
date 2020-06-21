@@ -8,8 +8,9 @@ export default class LoginComponent extends React.Component {
 
     state = {
         username: '',
-        password: '',
+   password: '',
           invalidCredentials: false
+
     }
 componentDidMount = () => this.props.authenticatedUser ||
         UserService.findLoggedInUser().then(user => this.props.logInUser(user))

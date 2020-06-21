@@ -6,9 +6,11 @@ class DetailsComponent extends React.Component {
     state = {
         date: this.props.match.params.date,
         apod: '',
-         editing: false,
+        editing: false,
+        caption: ''
     }
-      setEditing = (editing) =>
+
+    setEditing = (editing) =>
         this.setState({editing: editing})
 
     componentDidMount() {
@@ -19,10 +21,9 @@ class DetailsComponent extends React.Component {
             }))
     }
 
-  post = () =>
-    postService.createPost(
-      this.state.date)
-      .then(status => this.setEditing(false))
+    post = () =>
+      postService.createPost({apod: this.state.date, caption: this.state.caption})
+        .then(status => this.setEditing(false))
 
 
     render() {
@@ -41,12 +42,14 @@ class DetailsComponent extends React.Component {
                                        this.state.editing &&
                                        <span>
                                         <input
-                             className="form-control"
-                             placeholder="add a caption"
-                               onChange={(event) => this.savePostTitle(event.target.value)}
-
-                            />
-                                         <button className="btn btn-warning"onClick={this.Post} >
+                                        className="form-control"
+                                        placeholder="add a caption"
+                                        onChange={(event) => {
+                                          const newCaption = event.target.value
+                                          this.setState({caption: newCaption})
+                                          }}
+                                        value={this.state.caption}/>
+                                         <button className="btn btn-warning"onClick={() => this.post()} >
                                            Post </button>
                                          <button
                                            className="btn btn-danger"

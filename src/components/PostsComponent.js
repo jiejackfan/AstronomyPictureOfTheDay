@@ -10,7 +10,11 @@ export default class PostsComponent extends React.Component {
     }
 
     componentDidMount() {
-      this.setState.posts = PostService.findAllPosts()
+      PostService.findAllPosts()
+      .then(allPosts => 
+        this.setState({
+            posts: allPosts
+        }))
     }
 
  render() {
