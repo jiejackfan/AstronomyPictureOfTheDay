@@ -18,7 +18,7 @@ state={
 
     componentDidMount() {
         fetch("https://fan-free-joshi-server.herokuapp.com/api/profile"
-            /*"http://localhost:8080/api/profile"*/,{
+            ,{
             method:"POST",
             credentials:"include"
         }).then(response=>response.json())
@@ -47,7 +47,7 @@ state={
 
     logout=()=>{
         fetch("https://fan-free-joshi-server.herokuapp.com/api/logout"
-            /*"http://localhost:8080/api/logout"*/, {
+           , {
             method: 'POST',
             credentials: "include"
         })

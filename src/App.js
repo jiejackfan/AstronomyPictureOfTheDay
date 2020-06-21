@@ -54,10 +54,7 @@ function App() {
          exact={true}
                component={LoginComponent}>
         </Route>
-           <Route path='/profile'
-            exact={true}
-            component={ProfileComponent}>
-              </Route>
+
          <Route path='/about'
          component={AboutComponent}>
                 </Route>

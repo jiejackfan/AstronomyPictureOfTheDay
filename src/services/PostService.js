@@ -1,6 +1,4 @@
-
-
-  const findAllPosts = () =>
+const findAllPosts = () =>
     fetch("https://fan-free-joshi-server.herokuapp.com/api/posts")
     .then(response => {
       return response.json()
