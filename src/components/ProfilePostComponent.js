@@ -3,25 +3,15 @@ import {Link} from "react-router-dom";
 import PostService from "../services/PostService";
 import ProfilePostComponent from "./ProfilePostComponent";
 
-
 import  "./Footer.css";
 export default class ProfilePostComponent extends React.Component {
     state = {
         posts:[]
-        uid : this.props.uid,
     }
 
-      componentDidMount = () => {
-          PostService.PostService(this.props.userId).then(posts =>
-              this.setState({posts: posts})
-          }))
-      }
-       componentDidUpdate = (prevProps, _prevState, _snapshot) => {
-              if (this.props.userId !== prevProps.userId)
-                  PostService.PostService(this.props.userId).then(posts =>
-                    this.setState({posts: posts})
-                  }))
-          }
+    componentDidMount() {
+      this.setState.posts = PostService.findPostForUser(uid)
+    }
 
  render() {
         return(
@@ -40,21 +30,13 @@ export default class ProfilePostComponent extends React.Component {
                         </tr>
                     </thead>
                     <tbody>
-                    {this.props.authenticatedUser ? (
-                    this.state.posts.length > 0 ?
-                            this.state.posts.map(post =>
+                            {this.state.posts.map(post =>
                                 <PostRowComponent
 
-                                post={posts} key={post.uid}/>
+                                key={post._id}
+                                post={post}/>
 
-                            )
-                            :
-                              <p>No recent activity to display.</p>)
-                              :
-                              (
-             <p>Please <Link to='/login'>log in</Link> to view  users recent activity."</p>
-                                              )
-                            }
+                            )}
                     </tbody>
                 </table>
             </div>

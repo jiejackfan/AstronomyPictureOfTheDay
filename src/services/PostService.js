@@ -4,7 +4,7 @@ const findAllPosts = () =>
       return response.json()
     })
 
-    const PostService = (userId) =>
+    const findPostForUser = (userId) =>
       fetch("https://fan-free-joshi-server.herokuapp.com/api/posts/" + userId)
       .then(response => {
         return response.json()

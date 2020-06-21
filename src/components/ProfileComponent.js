@@ -18,9 +18,7 @@ state={
 
     componentDidMount() {
         fetch("https://fan-free-joshi-server.herokuapp.com/api/profile"
-
             ,{
-
             method:"POST",
             credentials:"include"
         }).then(response=>response.json())
@@ -49,9 +47,7 @@ state={
 
     logout=()=>{
         fetch("https://fan-free-joshi-server.herokuapp.com/api/logout"
-
            , {
-
             method: 'POST',
             credentials: "include"
         })
@@ -185,7 +181,7 @@ state={
                             <button className="form-control btn btn-success btn-block wbdv-button wbdv-update"
 
                              onClick={this.update}>
-
+                            >
                                 Update
                             </button>
                             <a className="form-control btn btn-danger btn-block wbdv-button wbdv-logout"
@@ -197,10 +193,6 @@ state={
                         </div>
                     </div>
                 </div>
-
-                <Link>
-
-                </Link>
             </div>
 
         )
