@@ -6,6 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin-bottom: 100px;
+
 }
 
 code {
@@ -17,5 +18,7 @@ code {
     height: 100%;
     margin: 0;
   }
+
+
 @import "~bootstrap/dist/css/bootstrap.min.css";
 

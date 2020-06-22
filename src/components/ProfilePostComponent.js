@@ -36,7 +36,7 @@ export default class ProfilePostComponent extends React.Component {
                                    </th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="justify ">
                             {this.state.posts.map(post =>
                                 <PostRowComponent
 

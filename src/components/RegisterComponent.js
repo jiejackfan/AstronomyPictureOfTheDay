@@ -51,6 +51,7 @@ export default class Register extends React.Component {
         }
                 render() {
                     return(
+                      <>
                          <div className="container ">
 
                     <form>
@@ -114,12 +115,11 @@ export default class Register extends React.Component {
                              <Link to="/login">Sign in?</Link>
                  </p>
 </form>
+ </div>
+<footer style={{backgroundImage: `url(${Background})`}
+} className='footer mt-auto py-3 bg-dark text-white footercss'>
 
-
-  <footer style={{backgroundImage: `url(${Background})`}}
-   className='footer mt-auto py-3 bg-dark text-white footercss'>
-
-                             <div class="container ">
+                             <div class="container">
                                        <div class="row row-30">
                                          <div class="col-md-4 col-xl-5">
                                            <div class="pr-xl-4"><a class="brand" >
@@ -178,10 +178,9 @@ export default class Register extends React.Component {
                                      </div>
 
                            </footer>
-
-</div>
-                      );
-                      }
-                      }
+  </>
+               )
+               }
+}
 
                    

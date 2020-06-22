@@ -39,7 +39,12 @@ export default class LoginComponent extends React.Component {
          <div className="container" >
          <form>
           <font color={'white'}>
-                                <h1 style={{backgroundImage: `url(${Background})`}}> &nbsp;&nbsp;Login</h1>
+                                <h1 style={{backgroundImage: `url(${Background})`}}> &nbsp;&nbsp;Login
+                                  <Link to="/home">
+                                                     <i class="fa fa-home float-right btn-sm" aria-hidden="true"></i>
+                                                     </Link>
+                                </h1>
+
                                  </font>
    <FormGroup>
         <Label for="exampleEmail">Email</Label>

@@ -31,18 +31,20 @@ export default class PostRowComponent extends React.Component {
 
     render() {
         return (
-            <tr>
-                <td >
-                    <img className="rounded mx-auto d-block" src={this.state.apod.url} alt="picture" height='500px'/>
-                    <h3>APOD title: {this.state.apod.title}</h3>
-                    <h3>APOD date: {this.state.apod.date}</h3>
-                    <h3>
+            <tr  className="table col-sm-3">
+                <td  >
+
+                    <img className="rounded mx-auto d-block" src={this.state.apod.url} alt="picture" height='400px' width='500px'/>
+                     <button className='btn btn-danger float-right' onClick={()=>PostService.deletePostById(this.props.post.id)}>
+                                            <i className="fa fa-trash" aria-hidden="true"/>
+                                        </button>
+                    <h3  style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>APOD title: {this.state.apod.title}</h3>
+                    <h3  style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>APOD date: {this.state.apod.date}</h3>
+                    <h3  style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>
                         User Caption:  {this.props.post.caption}
                     </h3>
-                    <button className='btn btn-danger' onClick={()=>PostService.deletePostById(this.props.post.id)}>
-                        <i className="fa fa-trash" aria-hidden="true"/>
-                    </button>
-                    <p>Comments</p>
+
+                    <p > Comments</p>
                     <ol>
                         <div>
 
@@ -58,7 +60,7 @@ export default class PostRowComponent extends React.Component {
                             }
                         </div>
                     </ol>
-                    <div className='form-group row'>
+                    <div  style={{display: 'flex',  justifyContent:'center', alignItems:'center'}} className='form-group row'>
                         <input className='col-5 form-control'
                                placeholder='new comment'
                                onChange={e=>this.setState({newComment:e.target.value})}

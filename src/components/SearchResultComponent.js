@@ -2,7 +2,7 @@ import React from "react";
 import ApodService from "../services/ApodService";
 import SearchResultRowComponent from "./SearchResultRowComponent";
 import {Link} from "react-router-dom";
-
+import {Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table';
 export default class SearchResultComponent extends React.Component {
     state = {
         startDate:this.props.match.params.startDate,
@@ -23,27 +23,27 @@ export default class SearchResultComponent extends React.Component {
     render() {
         return(
             <div>
-                <table className='table'>
-                    <thead>
-                        <tr>
-                            <th>Title</th>
-                            <th>Date</th>
-                            <th>image snapshot</th>
-                            <th>Details</th>
-                            <th>
+                <Table className='table'>
+                    <Thead>
+                        <Tr>
+                            <Th>Title</Th>
+                            <Th>Date</Th>
+                            <Th>image snapshot</Th>
+                            <Th>Details</Th>
+                            <Th>
                             <Link to="/home">
                                    <i class="fa fa-home float-right btn-sm" aria-hidden="true"></i>
                                    </Link>
-                                   </th>
-                        </tr>
-                    </thead>
-                    <tbody>
+                                   </Th>
+                        </Tr>
+                    </Thead>
+                    <Tbody>
                             {this.state.apods.map(apod =>
                                 <SearchResultRowComponent
                                     apod={apod} key={apod.date}/>
                             )}
-                    </tbody>
-                </table>
+                    </Tbody>
+                </Table>
             </div>
         )
     }
