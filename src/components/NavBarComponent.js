@@ -25,11 +25,11 @@ const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
   return (
-    <div class="container-fluid" >
+    <div >
 
 
 
-  <div  style={{paddingBottom: 50}} >
+  <div  class="container-fluid" style={{paddingBottom: 50}} >
         <div className="navbar navbar-expand-lg navbar-dark  bg-dark"
 
         style={{backgroundImage: `url(${Background})`}}>
@@ -43,8 +43,8 @@ const [isOpen, setIsOpen] = useState(false);
         </font>
 </NavbarBrand>
 
-        <NavbarToggler onClick={toggle} />
-        <Collapse isOpen={isOpen} navbar>
+       <NavbarToggler onClick={toggle} />
+               <Collapse isOpen={isOpen} navbar>
 
   <ul class="navbar-nav mr-auto">
   <li class="nav-item" style={{paddingLeft: 50}}>

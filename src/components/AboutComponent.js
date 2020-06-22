@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from "react-router-dom";
-import  "./Footer.css";
-
+import  "./footerhome.css";
+import {Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table';
 import {
 Jumbotron,
   Button,
@@ -17,11 +17,16 @@ import Background from './pick.jpg';
 const AboutComponent = () =>{
 
 return (
-    <div>
+
+<Table>
+<Thead>
+
       <Jumbotron>
  <h1 className="display-3">
  <i class="fa fa-star" aria-hidden="true"></i>
  About Us</h1>
+
+
         <p className="lead">We are a student formed platform that aims to create an engaging community of astronomy enthusiasts.</p>
         <hr className="my-2" />
         <p>NASA’s APOD (Astronomy Picture of the Day) API allows developers to find interesting astronomical pictures by searching criteria like date, keyword, picture quality. The API will return JSON data where each image contains information such as copyright, date released, explanation, picture URL, and version.
@@ -33,6 +38,8 @@ return (
         <button class="fa fa-home float-right btn-lg" aria-hidden="true"></button>
         </Link>
       </Jumbotron>
+      </Thead>
+
 
 
   <footer style={{backgroundImage: `url(${Background})`}
@@ -97,7 +104,8 @@ return (
                                      </div>
 
                            </footer>
-                             </div>
+
+                             </Table>
 )
 }
 export default AboutComponent

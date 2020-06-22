@@ -7,8 +7,8 @@ import { IconName } from "react-icons/fa";
 // reactstrap components
 import {Container } from "reactstrap";
 import Footer from "./FooterComponent";
-import './Footer.css';
-
+import './footerhome.css';
+import {Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table';
 
 class SearchComponent extends React.Component {
 
@@ -37,14 +37,14 @@ class SearchComponent extends React.Component {
             <header>
                 <NavBarComponent/>
 </header>
-   <div className="Container-fluid " style={{backgroundColor: "#F0FFFF"},{paddingBottom: 400}}>
+   <div className="Container-fluid  " style={{backgroundColor: "#F0FFFF"},{paddingBottom: 400}}>
                 <h3 className="d-flex justify-content-center inline" style={{paddingBottom: 20}}>
 
                 </h3>
 
                 <Form className="d-flex justify-content-center inline">
                     <h3>
-                                       Select Date &nbsp;&nbsp;
+                                      &nbsp;&nbsp; Select Date &nbsp;&nbsp;
 
                       </h3>
                      <FormGroup className="mb-2 mr-sm-2 mb-sm-0  " style={{paddingBottom: 20}}>
@@ -67,7 +67,7 @@ class SearchComponent extends React.Component {
 <Form className="d-flex justify-content-center inline">
    <h3 style={{textAlign:'right'}}>
 
-                       Date Range&nbsp;&nbsp;
+                    &nbsp;&nbsp;Date Range&nbsp;&nbsp;
 </h3>
 <FormGroup  className="mb-2 mr-sm-2 mb-sm-0 inline" style={{paddingBottom: 20}}>
                        <Label for="exampleEmail"  className="mr-sm-2" >
