@@ -4,9 +4,20 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import 'font-awesome/css/font-awesome.min.css';
+/*import {combineReducers, createStore} from "redux";
+import {Provider} from "react-redux"*/
+import PostReducer from "./reducers/PostReducer"
+
+/*const reducers = combineReducers({
+    PostReducer
+})
+const store = createStore(reducers)*/
 
 ReactDOM.render(
   <React.StrictMode>
+{/*      <Provider stpre={store}>
+
+      </Provider>*/}
     <App />
   </React.StrictMode>,
   document.getElementById('root')
