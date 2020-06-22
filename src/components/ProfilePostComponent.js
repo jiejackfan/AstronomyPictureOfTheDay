@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import PostService from "../services/PostService";
-import ProfilePostComponent from "./ProfilePostComponent";
+import PostRowComponent from "./PostRowComponent";
 
 import  "./Footer.css";
 export default class ProfilePostComponent extends React.Component {
@@ -10,8 +10,15 @@ export default class ProfilePostComponent extends React.Component {
     }
 
     componentDidMount() {
-      this.setState.posts = PostService.findPostForUser(uid)
+        PostService.findPostForUser(this.props.match.params.uid)
+          .then(listOfPosts=>{
+              console.log(listOfPosts)
+              this.setState({posts:listOfPosts})
+              /*console.log(this.state.posts)*/
+          })
+
     }
+
 
  render() {
         return(
@@ -20,11 +27,11 @@ export default class ProfilePostComponent extends React.Component {
                     <thead>
                         <tr>
 
-                            <th>image snapshot</th>
+                            <th>List of Saved Post By {this.props.user.username}</th>
 
                             <th>
                             <Link to="/home">
-                                   <i class="fa fa-home float-right btn-sm" aria-hidden="true"></i>
+                                   <i className="fa fa-home float-right btn-sm" aria-hidden="true"/>
                                    </Link>
                                    </th>
                         </tr>
@@ -33,8 +40,8 @@ export default class ProfilePostComponent extends React.Component {
                             {this.state.posts.map(post =>
                                 <PostRowComponent
 
-                                key={post._id}
-                                post={post}/>
+                                    key={post._id}
+                                    post={post}/>
 
                             )}
                     </tbody>

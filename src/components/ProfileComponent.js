@@ -2,10 +2,12 @@ import React from "react";
 import {Link} from "react-router-dom";
 import Background from './pick.jpg';
 import  "./Footer.css";
+import ProfilePostComponent from "./ProfilePostComponent";
 export default class ProfileComponent extends React.Component {
 
 state={
         user:{
+            id:'',
             username:'',
             password:'',
             email:'',
@@ -59,10 +61,10 @@ state={
             <div className=" container ">
              <font color={'white'}>
                 <h1 style={{backgroundImage: `url(${Background})`}}>
-                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i className="fa fa-star" aria-hidden="true"/>
                     &nbsp;&nbsp;Profile
                     <Link to="/home">
-                           <i class="fa fa-home float-right btn-sm" aria-hidden="true"></i>
+                           <i className="fa fa-home float-right btn-sm" aria-hidden="true"/>
                            </Link>
                     &nbsp;&nbsp;&nbsp;&nbsp;</h1>
                  </font>
@@ -111,9 +113,7 @@ state={
                             <input id="phoneFld"
                                    type="text"
                                    value={this.state.user.phone}
-
-                                      onChange={e=>this.setState({user:{phone:e.target.value}})}
-
+                                   onChange={e=>this.setState({user:{phone:e.target.value}})}
                                    className="form-control wbdv-field wbdv-phone"
                                    title="Enter your phone number"
                                    placeholder="(617)-309 0330"
@@ -193,6 +193,7 @@ state={
                         </div>
                     </div>
                 </div>
+                <ProfilePostComponent match={this.props.match} user={this.state.user}/>
             </div>
 
         )
