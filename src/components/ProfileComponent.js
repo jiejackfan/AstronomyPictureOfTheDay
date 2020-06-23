@@ -181,7 +181,7 @@ state={
                             <button className="form-control btn btn-success btn-block wbdv-button wbdv-update"
 
                              onClick={this.update}>
-                            >
+
                                 Update
                             </button>
                             <a className="form-control btn btn-danger btn-block wbdv-button wbdv-logout"
