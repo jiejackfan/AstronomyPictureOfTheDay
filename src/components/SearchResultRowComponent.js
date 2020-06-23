@@ -26,7 +26,7 @@ export default class SearchResultRowComponent extends React.Component {
                 <td>{this.props.apod.date}</td>
                 <td><img src={this.props.apod.url} height='200px' width='250px' alt='picture'/></td>
                 <td>
-                        <Link to={`/result/${this.props.apod.date}`}>
+                        <Link to={`/details/${this.props.apod.date}`}>
                            <button className="fa fa-info-circle fa-2x btn-danger">
                            </button>
                         </Link>
