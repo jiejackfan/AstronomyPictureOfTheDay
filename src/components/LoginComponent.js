@@ -23,7 +23,9 @@ export default class LoginComponent extends React.Component {
             method: 'POST',
             credentials: "include"
         }).then(response => response.json())
-            .catch(e => window.alert("username and password do not match"))
+            .catch(e => {
+                this.props.history.push("/login")
+            })
             .then(currentUser => {
                 if(currentUser)
                     this.props.history.push(`/profile/${currentUser.id}`)
@@ -37,20 +39,15 @@ export default class LoginComponent extends React.Component {
          <div className="container" >
          <form>
           <font color={'white'}>
-                                <h1 style={{backgroundImage: `url(${Background})`}}> &nbsp;&nbsp;Login
-                                  <Link to="/home">
-                                                     <i class="fa fa-home float-right btn-sm" aria-hidden="true"></i>
-                                                     </Link>
-                                </h1>
-
+                                <h1 style={{backgroundImage: `url(${Background})`}}> &nbsp;&nbsp;Login</h1>
                                  </font>
    <FormGroup>
-        <Label for="exampleEmail">Username</Label>
+        <Label for="exampleEmail">Email</Label>
 
                                 <input
                                     onChange={(e) => this.setState({username: e.target.value})}
                                     className="form-control"
-
+                                    type="email" name="email"
                                     />
                                        </FormGroup>
                                         <FormGroup>
@@ -81,7 +78,7 @@ export default class LoginComponent extends React.Component {
                                            </a>
                                              <p>We are an online platform that encourages astronomical adventures from your own screen .</p>
 
-                                             <p class="rights"><span>©  </span><span class="copyright-year">2020</span><span> </span><span>Fan-Free-Joshi</span><span>. </span><span>All Rights Reserved.</span></p>
+                                             <p class="rights"><span>©  </span><span class="copyright-year">2020</span><span> </span><span>Fan-Free-Joshi</span><span>. </span><span>All Rights Reserved.</span></p>
                                            </div>
                                          </div>
                                          <div class="col-md-4">
