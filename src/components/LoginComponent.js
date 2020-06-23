@@ -23,9 +23,7 @@ export default class LoginComponent extends React.Component {
             method: 'POST',
             credentials: "include"
         }).then(response => response.json())
-            .catch(e => {
-                this.props.history.push("/login")
-            })
+            .catch(e => window.alert("username and password do not match"))
             .then(currentUser => {
                 if(currentUser)
                     this.props.history.push(`/profile/${currentUser.id}`)
