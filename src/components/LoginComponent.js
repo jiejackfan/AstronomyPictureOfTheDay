@@ -47,12 +47,12 @@ export default class LoginComponent extends React.Component {
 
                                  </font>
    <FormGroup>
-        <Label for="exampleEmail">Email</Label>
+        <Label for="exampleEmail">Username</Label>
 
                                 <input
                                     onChange={(e) => this.setState({username: e.target.value})}
                                     className="form-control"
-                                    type="email" name="email"
+
                                     />
                                        </FormGroup>
                                         <FormGroup>
