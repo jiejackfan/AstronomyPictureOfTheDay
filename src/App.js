@@ -23,7 +23,7 @@ function App() {
         </Route>
 
 
-                <Route path='/result/:date'
+                <Route path='/details/:date'
                  exact={true}
                        component={DetailsComponent}>
                 </Route>

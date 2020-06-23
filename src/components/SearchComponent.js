@@ -23,7 +23,7 @@ class SearchComponent extends React.Component {
         this.setState({[e.target.name]: e.target.value})
 
     submitSingleDate = () =>
-        this.props.history.push(`/result/${this.state.singleDate}`)
+        this.props.history.push(`/details/${this.state.singleDate}`)
 
     submitDateRange = () =>
         this.props.history.push(`/result/startDate/${this.state.startDate}/endDate/${this.state.endDate}`)
