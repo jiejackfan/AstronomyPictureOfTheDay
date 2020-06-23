@@ -69,7 +69,7 @@ export default class LoginComponent extends React.Component {
                                  </form>
 
   <footer style={{backgroundImage: `url(${Background})`}}
-   className='footer mt-auto py-3 bg-dark text-white footercss'>
+   className='footer mt-auto py-3 bg-dark text-white footercss d-none d-sm-block'>
 
                              <div class="container ">
                                        <div class="row row-30">
