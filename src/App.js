@@ -40,8 +40,7 @@ function App() {
 
                 <Route path='/profile'
                  exact={true}
-
-                       component={ProfileComponent}>
+                 component={ProfileComponent}>
                 </Route>
 
                 <Route path='/profile/:uid'

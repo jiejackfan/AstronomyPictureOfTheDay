@@ -48,7 +48,7 @@ export default class Register extends React.Component {
                         window.alert("username has already been taken")
                     }
                     else {
-                      this.props.history.push("/profile")
+                      this.props.history.push("/login")
                     }
                 })
         }
@@ -108,7 +108,7 @@ export default class Register extends React.Component {
   </div>
 
 
-<Link to="/profile">
+<Link to="/login">
   <button type="submit" className="btn btn-success btn-block"
                   onClick={this.register}
                      > Register
