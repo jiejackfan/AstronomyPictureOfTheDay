@@ -10,10 +10,9 @@ export default class SearchResultRowComponent extends React.Component {
       setEditing = (editing) =>
         this.setState({editing: editing})
 
- post = () =>
-    postService.createPost(
-      this.state.date)
-      .then(status => this.setEditing(false))
+    post = () =>
+      postService.createPost({apod: this.state.date, caption: this.state.caption})
+        .then(status => this.setEditing(false))
 
 
     goDetailPage = () =>
@@ -44,12 +43,16 @@ export default class SearchResultRowComponent extends React.Component {
                                                         <input
                                              className="form-control"
                                              placeholder="add a caption"
-                                               onChange={(event) => this.savePostTitle(event.target.value)}
+                                               onChange={(event) => {
+                                                                      const newCaption = event.target.value
+                                                          this.setState({caption: newCaption})
+                                                               }}
+                                                               value={this.state.caption}/>
 
 
                                             />
                                                          <button className="btn btn-warning"
-                                                         onClick={this.submitPost}
+                                                        onClick={() => this.post()}
 
                                                           >
                                                            Post </button>

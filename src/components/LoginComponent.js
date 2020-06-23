@@ -42,7 +42,7 @@ export default class LoginComponent extends React.Component {
                                 <h1 style={{backgroundImage: `url(${Background})`}}> &nbsp;&nbsp;Login</h1>
                                  </font>
    <FormGroup>
-        <Label for="exampleEmail">Email</Label>
+        <Label for="exampleEmail">UserName</Label>
 
                                 <input
                                     onChange={(e) => this.setState({username: e.target.value})}
