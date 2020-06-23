@@ -44,8 +44,11 @@ export default class Register extends React.Component {
                     })
                 })
                 .then(currentUser => {
-                    if (currentUser) {
-                        this.props.history.push("/profile")
+                    if (currentUser == null) {
+                        window.alert("username has already been taken")
+                    }
+                    else {
+                      this.props.history.push("/profile")
                     }
                 })
         }
