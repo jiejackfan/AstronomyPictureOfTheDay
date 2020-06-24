@@ -35,6 +35,7 @@ export default class PostRowComponent extends React.Component {
                 <td  >
 
                     <img className="rounded mx-auto d-block" src={this.state.apod.url} alt="picture" height='400px' width='500px'/>
+                    console.log(this.props.post.id)
                      <button className='btn btn-danger float-right' onClick={()=>PostService.deletePostById(this.props.post.id)}>
                                             <i className="fa fa-trash" aria-hidden="true"/>
                                         </button>
