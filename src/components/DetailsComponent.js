@@ -56,7 +56,7 @@ class DetailsComponent extends React.Component {
                                        this.setState({caption: newCaption})
                                }}
                                                                                value={this.state.caption}/>
-                                         <button className="btn btn-warning" onClick={this.Post}>
+                                         <button className="btn btn-warning" onClick={this.post}>
                                            Post </button>
                                          <button
                                              className="btn btn-danger"
