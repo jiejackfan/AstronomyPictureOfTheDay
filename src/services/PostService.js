@@ -31,9 +31,7 @@ const deletePostById = (postId) =>
     fetch("https://fan-free-joshi-server.herokuapp.com/api/posts/delete/" + postId, {
         method: 'DELETE'
     })
-        .then(response => {
-            return response.json()
-        })
+
 
 export default {
     findAllPosts,
